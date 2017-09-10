@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="fdf2682b-64a1-044e-9b0e-bce1b6abe807" kpf_version="5" name="storage.komodoproject">
-<livefolder id="954ce6df-817e-ef4c-9907-03970255ec1c" idref="fdf2682b-64a1-044e-9b0e-bce1b6abe807" name="storage" url="storage">
-</livefolder>
 <preference-set idref="fdf2682b-64a1-044e-9b0e-bce1b6abe807" id="project" preftype="project">
   <long id="prefs_version">1</long>
 </preference-set>
