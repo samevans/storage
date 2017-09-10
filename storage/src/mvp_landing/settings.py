@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []#whatevermysiteis
 
 
 # Application definition
