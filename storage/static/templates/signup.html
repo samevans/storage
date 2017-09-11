@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-            
-        </head>
-        
-        <body>
-            <h1>Join Now</h1>
-            <form method='POST' action=''> {% csrf_token %}
-                {{form.as_p}}
-                <input type='submit'>
-            </form>
-        </body>
-    </html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Join Now</h1>
+<form method='POST' action=''> {% csrf_token %}
+    {{form.as_p}}
+    <input type='submit'>
+</form>
+{% endblock %}
