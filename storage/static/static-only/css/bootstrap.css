@@ -3373,7 +3373,7 @@ tbody.collapse.show {
         flex-wrap: nowrap;
   }
   .navbar-expand-sm .navbar-collapse {
-    display: -ms-flexbox !important;
+    display: flex !important;
     display: flex !important;
   }
   .navbar-expand-sm .navbar-toggler {

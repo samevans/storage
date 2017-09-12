@@ -1,5 +1,7 @@
 .jumbotron {
-    background-color: #229CB7;
+    width: auto !important;
+    background-color: white;
+    margin-top: -40px;
 }
 
 p {
@@ -8,4 +10,23 @@ p {
 
 .success {
     text-align: right;
+}
+
+.homepageimage{
+	height: auto;
+    width: auto;
+}
+
+.getthere h1{
+    font-family: ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif !important;
+    letter-spacing: -.03em !important;
+    font-weight: 400 !important;
+    position: relative;
+    left: 100px;
+}
+.getthere h2{
+    letter-spacing: -.03em !important;
+    font-weight: 400 !important;
+    position: relative;
+    left: 100px;
 }
