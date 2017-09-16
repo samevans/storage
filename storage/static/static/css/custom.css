@@ -1,19 +1,42 @@
 .jumbotron {
     width: 100% !important;
+    height: 100%;
     background-color: white;
+    overflow: hidden;
+}
+
+.jumbotronimg {
+    position: relative;
+    margin-top: 55px;/*100*/
+    background-image: url('/static/assets/garage2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#signupbox{
+    width:402px;
+    height:750px;
+    background:#F8F8FA;
+    position: relative;
+    top: -15px;
+    left: 840px;
+}
+
+#littlerectangle {
+    width:402px;
+    height:8px;
+    background:#F1F1F1;
+}
+
+#rentaspace {
+    width:60px;
+    height:60px;
+    background:#8ADAC1;
+    border-radius: 50%;
 }
 
 p {
     color: black;
-}
-
-#signupbox{
-    width:400px;
-    height:750px;
-    background:#F8F8FA;
-    position: relative;
-    top: -700px;
-    left: 840px;
 }
 
 .success {
