@@ -13,6 +13,35 @@
     background-position: center;
 }
 
+.jumbotronimg p {
+    color: black;
+    position: relative;
+    left: 40px;
+    top: 20px;
+    font-family: arial;
+    font-size: 25px;
+    letter-spacing: -.04em;
+}
+
+.jumbotronimg h1 {
+    color: red;
+    position: relative;
+    left: 40px;
+    top: 0px;
+    font-family: arial;
+    font-size: 19px;
+    letter-spacing: .07em;
+}
+
+.jumbotronimg h6 {
+    color: #C6C6C8;
+    position: relative;
+    left: 60px;
+    top: 10px;
+    font-family: arial;
+    font-size: 10px;
+}
+
 #signupbox{
     width:402px;
     height:750px;
@@ -28,15 +57,39 @@
     background:#F1F1F1;
 }
 
+#line {
+    width:125px;
+    height:1.5px;
+    background:#F1F1F1;
+    position: relative;
+    left: 50px;
+    top: 15px;
+    float:left;
+}
+
+#line2 {
+    width:125px;
+    height:1.5px;
+    background:#F1F1F1;
+    position: relative;
+    left: 211px;
+    top: -6px;
+    
+}
+
 #rentaspace {
-    width:60px;
-    height:60px;
+    width:65px;
+    height:65px;
     background:#8ADAC1;
     border-radius: 50%;
+    position: relative;
+    left: 20px;
+    top: 15px;
+    float:left;
 }
 
 p {
-    color: black;
+    color: black;   
 }
 
 .success {

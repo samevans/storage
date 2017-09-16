@@ -15,7 +15,7 @@ def home(request):
         messages.success(request, 'We will be in touch')
         return HttpResponseRedirect('/thank-you')
     
-    return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
+    return render_to_response("home.html", locals(), context_instance=RequestContext(request))
 
 def thankyou(request):
     
