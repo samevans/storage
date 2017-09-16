@@ -1,11 +1,46 @@
 .jumbotron {
-    
+    width: 100% !important;
+    background-color: white;
 }
 
 p {
     color: black;
 }
 
+#rectangle{
+    width:200px;
+    height:100px;
+    background:blue;
+}
+
 .success {
     text-align: right;
+}
+
+.bgimage {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    top: -60px;
+}
+
+.image2 {
+	height: auto;
+    width: auto;
+    position: relative;
+    left: 30px;
+}
+
+.getthere h1 {
+    font-family: ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif !important;
+    letter-spacing: -.03em !important;
+    font-weight: 400 !important;
+    position: relative;
+    left: 100px;
+}
+.getthere h2 {
+    letter-spacing: -.03em !important;
+    font-weight: 400 !important;
+    position: relative;
+    left: 100px;
 }

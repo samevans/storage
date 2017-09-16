@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden; max-width: 100%;">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,7 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     {% block jumbotron %}
-    {% endblock%}
+    {% endblock %}
     
     <div class="container">
       {% if messages %}
@@ -57,10 +57,10 @@
               {% endfor%}
         </div>
       </div>
-      {% endif%}
+      {% endif %}
     
-    {% block content %}
-    {% endblock%}
+      {% block content %}
+      {% endblock %}
 
       <footer>
         <p>&copy; 2017 Wizrobe, Inc.</p>
