@@ -24,3 +24,7 @@ def thankyou(request):
 def contactus(request):
     
     return render_to_response("contactus.html", locals(), context_instance=RequestContext(request))
+
+def signup(request):
+    
+    return render_to_response("signup.html", locals(), context_instance=RequestContext(request))

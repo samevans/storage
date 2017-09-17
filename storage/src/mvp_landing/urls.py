@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^$', 'signups.views.home', name='home'),
     url(r'^thank-you/$', 'signups.views.thankyou', name='thankyou'),
     url(r'^contact-us/$', 'signups.views.contactus', name='contactus'),
+    url(r'^sign-up/$', 'signups.views.signup', name='signup'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

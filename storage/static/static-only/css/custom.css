@@ -7,36 +7,89 @@
 
 .jumbotronimg {
     position: relative;
-    margin-top: -100px;
+    margin-top: 55px;/*100*/
     background-image: url('/static/assets/garage2.png');
     background-repeat: no-repeat;
     background-position: center;
 }
 
+.jumbotronimg p {
+    color: black;
+    position: relative;
+    left: 40px;
+    top: 20px;
+    font-family: helvetica;
+    font-size: 25px;
+    letter-spacing: -.04em;
+}
+
+.jumbotronimg h1 {
+    color: red;
+    position: relative;
+    left: 40px;
+    top: 0px;
+    font-family: helvetica;
+    font-size: 19px;
+    letter-spacing: .07em;
+}
+
+.jumbotronimg h6 {
+    color: #C6C6C8;
+    position: relative;
+    left: 60px;
+    top: 10px;
+    font-family: helvetica;
+    font-size: 10px;
+}
+
 #signupbox{
-    width:400px;
+    width:402px;
     height:750px;
     background:#F8F8FA;
     position: relative;
-    top: 135px;
+    top: -15px;
     left: 840px;
 }
 
 #littlerectangle {
-    width:400px;
+    width:402px;
     height:8px;
     background:#F1F1F1;
 }
 
+#line {
+    width:125px;
+    height:1.5px;
+    background:#F1F1F1;
+    position: relative;
+    left: 50px;
+    top: 15px;
+    float:left;
+}
+
+#line2 {
+    width:125px;
+    height:1.5px;
+    background:#F1F1F1;
+    position: relative;
+    left: 211px;
+    top: -6px;
+    
+}
+
 #rentaspace {
-    background-image: url('/static/assets/rentaspace.png');
-    background-repeat: no-repeat;
-    background-position: center;
+    width:65px;
+    height:65px;
+    background:#8ADAC1;
     border-radius: 50%;
+    position: relative;
+    left: 20px;
+    top: 15px;
+    float:left;
 }
 
 p {
-    color: black;
+    color: black;   
 }
 
 .success {

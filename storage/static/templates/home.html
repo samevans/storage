@@ -16,11 +16,39 @@
         <div id="line2"></div>
         <div id="rentaspace" style="background:#5DBCD2;"></div>
         <div><p style="top:30px;">Sign up to rent your space</p></div>
+        <br><br><br>
+        <div class="form-group" id="signup_textboxes">
+          
+          <input class="form-control input-lg" style="width:180px; position: relative; left:22px; border-radius: 0; float: left;" id="signup_firstname" type="text" placeholder="First Name">
+          
+          <input class="form-control input-lg" style="width:180px; position: relative; left: 21px; border-radius: 0;" id="signup_lastname" type="text" placeholder="Last Name">
+          
+          <br>
+          
+          <input class="form-control input-lg" style="width:360px; position: relative; left: 21px; border-radius: 0;" id="signup_email" type="text" placeholder="Email">
+          
+          <br>
+          
+          <input class="form-control input-lg" style="width:360px; position: relative; left: 21px; border-radius: 0;" id="signup_phone" type="text" placeholder="Phone Number">
+          
+          <br>
+          
+          <input class="form-control input-lg" style="width:360px; position: relative; left: 21px; border-radius: 0;" id="signup_password" type="text" placeholder="Create Password">
+          
+          <br>
+          
+          <input class="form-control input-lg" style="width:360px; position: relative; left: 21px; border-radius: 0;" id="signup_city" type="text" placeholder="City">
+          
+          <br>
+          
+          <a href="{% url "signup" %}" class="btn btn-lg" style="width:360px; position: relative; left: 21px; border-radius: 0; background: #367036; color: white; text-align: left;">Sign up to rent my space <span class="pull-right glyphicon glyphicon glyphicon-chevron-right"></span></a>
+          
+          
+                
+        </div>
       </div>
     </div>
     
-    
-
 {% endblock %}
 
 {% block content %}

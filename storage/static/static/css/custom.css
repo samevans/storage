@@ -18,7 +18,7 @@
     position: relative;
     left: 40px;
     top: 20px;
-    font-family: arial;
+    font-family: helvetica;
     font-size: 25px;
     letter-spacing: -.04em;
 }
@@ -28,7 +28,7 @@
     position: relative;
     left: 40px;
     top: 0px;
-    font-family: arial;
+    font-family: helvetica;
     font-size: 19px;
     letter-spacing: .07em;
 }
@@ -38,7 +38,7 @@
     position: relative;
     left: 60px;
     top: 10px;
-    font-family: arial;
+    font-family: helvetica;
     font-size: 10px;
 }
 
