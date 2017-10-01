@@ -138,3 +138,20 @@ p {
     position: relative;
     left: 100px;
 }
+
+.signup_box {
+    text-align:center !important; 
+    height:55px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin-top: 0px !important;
+}
+
+.unique_signupbox {
+    width:500px !important;
+    height:50px !important;
+    position: relative !important;
+    border-radius: 0px !important;
+}

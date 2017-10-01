@@ -28,3 +28,4 @@ def contactus(request):
 def signup(request):
     
     return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
+

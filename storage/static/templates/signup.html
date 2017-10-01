@@ -11,25 +11,69 @@
         width:100%;
         height: 100px;
     "></div>
+    
+    <div style="text-align: center; width:100%;">
+        <div style="
+            background-image: url('/static/assets/wizrobewhitelogo.png');
+            width:200px;
+            height:150px;
+            background:#030403;
+            border-radius: 7px;
+            position:absolute;
+            margin-top: -50px;
+            margin-left: -90px;
+            display: inline-block;
+        ">
+        <center><img src="/static/assets/wizrobewhitelogo.png" style="
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            display: block;
+        "></center>
+        </div>
+    </div>
+    
     <div class="jumbotron">
       <div class="container">
-        <h1>This is us.</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <br/>
+        <br/>
+        <br/>
+        <h1 style="text-align: center; color: #030403;font-size: 250%;">Sign up to rent a space</h1>
+        
+        <div class="signup_box">
+            <input class="form-control input-lg unique_signupbox" style="
+                width:240px !important;
+                float: left;
+            " id="signup_firstname" type="text" placeholder="First Name">
+            
+            <input class="form-control input-lg unique_signupbox" style="
+                width:240px !important;
+                margin-left: 20px;
+                float: left;
+            " id="signup_lastname" type="text" placeholder="Last Name">
+        </div>
+       <div style="clear:both;">&nbsp;</div>
+       <div class="signup_box">
+            <input class="form-control input-lg unique_signupbox" id="signup_phone" type="text" placeholder="Phone Number">
+       </div>
+       
+       <div style="clear:both;">&nbsp;</div>
+       <div class="signup_box">
+            <input class="form-control input-lg unique_signupbox" id="signup_email" type="email" placeholder="Email">
+       </div>
+       
+       <div style="clear:both;">&nbsp;</div>
+       <div class="signup_box">
+            <input class="form-control input-lg unique_signupbox" id="signup_password" type="password" placeholder="Password">
+       </div>
+       
+       <div style="clear:both;">&nbsp;</div>
+       <div class="signup_box">
+            <p><a class="btn btn-primary btn-lg unique_signupbox" style="background-color: #56AE5C;" href="#" role="button">Sign Up</a></p>
+       </div>
       </div>
     </div>
 {% endblock %}
 
-<div style="">
-    
-    <div class="jumbotronimg"></div>
-    <img src="/static/assets/pillar.png" style="
-        background-repeat: repeat-x;
-    " />
-    <a href="/"><img src="img/logo.png" alt="Logo" class="logo" /></a>
-    <div id="loginBox">
-        other code
-    </div>
-</div>
 
  
