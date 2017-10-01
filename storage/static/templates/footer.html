@@ -1,5 +1,9 @@
 
-<footer>
+<footer
+     {% if request.path == "/sign-up/" %}
+     style="display: none;"
+     {% endif %}
+     >
     
     <div class="col-md-4">
         <p>&copy; 2017 Wizrobe, Inc.</p>

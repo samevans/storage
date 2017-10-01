@@ -1,4 +1,8 @@
-
+.stretchheader {
+    width: 100% !important;
+    position: relative;
+    top: 100px;
+}
 
 .jumbotron {
     width: 100% !important;
@@ -35,6 +39,16 @@
     letter-spacing: .07em;
 }
 
+.jumbotronimg a {
+    color: red;
+    position: relative;
+    left: 90px;
+    top: 0px;
+    font-family: helvetica;
+    font-size: 19px;
+    letter-spacing: .07em;
+}
+
 .jumbotronimg h6 {
     color: #C6C6C8;
     position: relative;
@@ -60,13 +74,12 @@
 }
 
 #line {
-    width:125px;
+    width:250px;/*TODO: make a blank line over this one so it doesnt fuck up*/
     height:1.5px;
     background:#F1F1F1;
     position: relative;
     left: 50px;
     top: 15px;
-    float:left;
 }
 
 #line2 {
