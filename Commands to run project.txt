@@ -1,0 +1,7 @@
+# Run server
+
+django manage.py runserver
+
+
+
+python manage.py collectstatic
