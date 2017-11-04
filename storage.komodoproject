@@ -4,5 +4,6 @@
 <livefolder id="6755faab-ff1e-4449-a2d5-186eba7af884" idref="1903eb94-15dc-1848-9c86-acb4a1cac0bb" name="storage" url="">
 </livefolder>
 <preference-set idref="1903eb94-15dc-1848-9c86-acb4a1cac0bb" id="project" preftype="project">
+  <long id="prefs_version">1</long>
 </preference-set>
 </project>

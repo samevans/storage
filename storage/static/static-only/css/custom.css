@@ -141,8 +141,7 @@ p {
 
 .signup_box {
     text-align:center !important; 
-    height:70px !important;
-    width: 1150px !important;
+    height:55px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -150,9 +149,9 @@ p {
     margin-top: 0px !important;
 }
 
-.signup_box box {
-    width:740px;
-    height:60px;
-    position: relative;
-    border-radius: 5px;
+.unique_signupbox {
+    width:500px !important;
+    height:50px !important;
+    position: relative !important;
+    border-radius: 0px !important;
 }
