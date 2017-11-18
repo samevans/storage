@@ -9,12 +9,6 @@
 ` python manage.py syncdb `
 
 
-
-
-
-test
-
-
 Clear browser cache to update css:
 command+shift+delete
 

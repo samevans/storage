@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% if messages %}
+                <br/>
+                {% for message in messages %}
+                <h1 style="text-align: center; color: #030403; font-size: 150%;">{{ message }}</h1>
+                {% endfor %}
+        {% endif %}
+
+<div class='col-sm-12' style='text-align: center;'>
+    <h4>Thank you for joining!</h4>
+</div>
+
+{% endblock%}

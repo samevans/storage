@@ -42,33 +42,16 @@
 
     {% include 'navbar.html' %}
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
     {% block jumbotron %}
     {% endblock %}
     
     <div class="container">
-      {% if messages %}
-      <div class='row'>
-        <div class='col-sm-12'>
-              {% for message in messages %}
-              <p{% if message.tags == "success" %} class="alert alert-success" {% endif %}>
-                {{message}}
-              </p>
-              {% endfor%}
-        </div>
-      </div>
-      {% endif %}
     
       {% block content %}
       {% endblock %}
 
-      <!--<footer>
-        <p>&copy; 2017 Wizrobe, Inc.</p>
-      </footer>-->
-      
       {% include 'footer.html' %}
     </div>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

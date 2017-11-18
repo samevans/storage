@@ -13,7 +13,6 @@
     "></div>
     
     <a href="{% url "home" %}" style="text-align: center; width:100%; display: block;">
-        
         <div style="
             background-image: url('/static/assets/wizrobewhitelogo.png');
             width:200px;
@@ -23,8 +22,7 @@
             position:absolute;
             margin-top: -50px;
             margin-left: -90px;
-            display: inline-block;
-        ">
+            display: inline-block;">
         <center><img src="/static/assets/wizrobewhitelogo.png" style="
             margin-left: auto;
             margin-right: auto;
@@ -33,33 +31,19 @@
         "></center>
         </div>
     </a>
-    
-    
     <div class="jumbotron">
       <div class="container">
         <br/><br/><br/>
         <h1 style="text-align: center; color: #030403;font-size: 250%;">Sign up to rent a space</h1>
-        
         <form method='POST' action=''>
             {% csrf_token %}
-            
             {% for field in form %}
                 <div class="signup_box" >
                     <input class="form-control input-lg" name="{{ field.html_name }}" type="text" placeholder="{{ field.label }}">
                 </div>
             {% endfor %}
-            
             <p><input type="submit" class="signup_box btn btn-primary btn-lg signup_button" value="Sign Up"></p>
-            
         </form>
-        
-        {% if messages %}
-                <br/>
-                {% for message in messages %}
-                <p>{{ message }}</p>
-                {% endfor %}
-        {% endif %}
-        
       </div>
     </div>
 {% endblock %}
