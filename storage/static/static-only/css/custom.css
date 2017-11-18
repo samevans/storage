@@ -155,3 +155,9 @@ p {
     position: relative !important;
     border-radius: 0px !important;
 }
+
+.signup_button {
+    background-color: #56AE5C;
+    margin-left: auto;
+    margin-right: auto;
+}

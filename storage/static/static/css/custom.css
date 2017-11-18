@@ -140,18 +140,20 @@ p {
 }
 
 .signup_box {
-    text-align:center !important; 
+    width:500px !important;
     height:55px !important;
+    border-radius: 0px !important;
+    position: relative !important;
+    margin-top: 0px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 10px !important;
+}
+
+.signup_button {
+    background-color: #56AE5C;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    position: relative !important;
-    margin-top: 0px !important;
-}
-
-.unique_signupbox {
-    width:500px !important;
-    height:50px !important;
-    position: relative !important;
-    border-radius: 0px !important;
+    text-align:center !important; 
 }

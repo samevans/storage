@@ -1,7 +1,25 @@
-# Run server
+# Commands to run project
 
-django manage.py runserver
+`` storage/storage/src ``
+
+` python manage.py collectstatic `
+
+` python manage.py runserver `
+
+` python manage.py syncdb `
 
 
 
-python manage.py collectstatic
+
+
+
+
+
+Clear browser cache to update css:
+command+shift+delete
+
+Working with forms:
+https://docs.djangoproject.com/en/1.11/topics/forms/
+
+Working with messages:
+https://docs.djangoproject.com/en/1.11/ref/contrib/messages/
