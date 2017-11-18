@@ -4,6 +4,11 @@
     top: 100px;
 }
 
+#footer {
+    position:fixed;
+    bottom:0;
+}
+
 .jumbotron {
     width: 100% !important;
     height: 100%;
@@ -158,7 +163,40 @@ p {
     text-align:center !important; 
 }
 
-#footer {
-    position:fixed;
-    bottom:0;
+/*========================================
+Sign In Page
+==========================================*/
+.signupreceived {
+    text-align: center;
+    color: #030403;
+    font-size: 90%;
+}
+
+.signin_rectangles {
+    background-color: #F8F8FA;
+    width: 340px;
+    border:1px solid #000;
+    border-radius: 4px !important;
+    padding: 25px;
+    margin: 25px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 14px;
+}
+
+.signin_inputbox {
+    position: relative !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    font-weight: normal;
+}
+
+#newtowizrobe {
+    text-align: center;
+}
+
+#signin {
+    height: 300px;
+    text-align: left;
+    font-weight: bold;
 }

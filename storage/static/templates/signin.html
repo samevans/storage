@@ -2,15 +2,33 @@
 
 {% block content %}
 
+	<div style='text-align: center; letter-spacing: -.07em;'>
+		<h3>Sign in to Wizrobe</h3>
+	</div>
+	
 	{% if messages %}
-                <br/>
-                {% for message in messages %}
-                <h1 style="text-align: center; color: #030403; font-size: 150%;">{{ message }}</h1>
-                {% endfor %}
-        {% endif %}
-
-<div class='col-sm-12' style='text-align: center;'>
-    <h4>Thank you for joining!</h4>
-</div>
+		{% for message in messages %}
+			<h1 class="signupreceived">{{ message }}</h1>
+		{% endfor %}
+	{% endif %}
+	
+	<div id="signin" class="signin_rectangles">
+		Username or email address
+		
+		<div class="signin_inputbox" >
+            <input id="username" class="form-control input-md">
+        </div>
+		
+		Password
+		<span style="float:right;"><a href="{% url "signup" %}">Forgot Password?</a></span>
+		
+		<div class="signin_inputbox" >
+            <input id="password" class="form-control input-md">
+        </div>
+	</div>
+	
+	<div id="newtowizrobe" class="signin_rectangles">
+		New to Wizrobe? <a href="{% url "signup" %}">Create an account</a>.
+	</div>
 
 {% endblock%}
