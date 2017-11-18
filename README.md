@@ -4,5 +4,7 @@
 
 ` python manage.py collectstatic `
 
-` django manage.py runserver `
+` python manage.py runserver `
+
+` python manage.py syncdb `
 

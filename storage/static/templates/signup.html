@@ -32,47 +32,43 @@
             display: block;
         "></center>
         </div>
-    </a
+    </a>
+    
+    
     <div class="jumbotron">
       <div class="container">
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
         <h1 style="text-align: center; color: #030403;font-size: 250%;">Sign up to rent a space</h1>
         
-        <div class="signup_box">
-            <input class="form-control input-lg unique_signupbox" style="
-                width:240px !important;
-                float: left;
-            " id="signup_firstname" type="text" placeholder="First Name">
+        <form method='POST' action=''>
+            {% csrf_token %}
             
-            <input class="form-control input-lg unique_signupbox" style="
-                width:240px !important;
-                margin-left: 20px;
-                float: left;
-            " id="signup_lastname" type="text" placeholder="Last Name">
-        </div>
-       <div style="clear:both;">&nbsp;</div>
-       <div class="signup_box">
-            <input class="form-control input-lg unique_signupbox" id="signup_phone" type="text" placeholder="Phone Number">
-       </div>
-       
-       <div style="clear:both;">&nbsp;</div>
-       <div class="signup_box">
-            <input class="form-control input-lg unique_signupbox" id="signup_email" type="email" placeholder="Email">
-       </div>
-       
-       <div style="clear:both;">&nbsp;</div>
-       <div class="signup_box">
-            <input class="form-control input-lg unique_signupbox" id="signup_password" type="password" placeholder="Password">
-       </div>
-       
-       <div style="clear:both;">&nbsp;</div>
-       <div class="signup_box">
-            <p><a class="btn btn-primary btn-lg unique_signupbox" style="background-color: #56AE5C;" href="#" role="button">Sign Up</a></p>
-       </div>
+            {% for field in form %}
+                <div class="signup_box" style="margin-bottom: 10px;">
+                    
+                    <!-- https://docs.djangoproject.com/en/1.11/topics/forms/ -->
+                    
+                    <input class="form-control input-lg unique_signupbox"
+                           id="signup"
+                           type="text"
+                           placeholder="{{ field.label }}">
+                </div>
+            {% endfor %}
+            
+            <p>
+                <input type="submit"
+                        class="signup_box btn btn-primary btn-lg unique_signupbox"
+                        value="Sign Up"
+                        style="background-color: #56AE5C;
+                            margin-left: auto;
+                            margin-right: auto;"
+                >
+            </p>
+            
+        </form>
+        
       </div>
     </div>
 {% endblock %}
