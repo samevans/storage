@@ -2,6 +2,10 @@
 <footer
      {% if request.path == "/sign-up/" %}
      style="display: none;"
+     {% else %}
+        {% if request.path == "/sign-in/" %}
+        style="display: none;"
+        {% endif %}
      {% endif %}
      >
     
