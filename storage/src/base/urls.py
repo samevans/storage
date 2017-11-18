@@ -5,12 +5,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
     url(r'^$', 'wizrobe.views.home', name='home'),
-    url(r'^thank-you/$', 'wizrobe.views.thankyou', name='thankyou'),
     url(r'^contact-us/$', 'wizrobe.views.contactus', name='contactus'),
     url(r'^sign-up/$', 'wizrobe.views.signup', name='signup'),
     url(r'^sign-in/$', 'wizrobe.views.signin', name='signin'),
+    url(r'^request-password/$', 'wizrobe.views.requestpassword', name='requestpassword'),
     url(r'^admin/', include(admin.site.urls)),
 )
 

@@ -1,13 +1,17 @@
-
 <footer
      {% if request.path == "/sign-up/" %}
      style="display: none;"
+     
      {% else %}
         {% if request.path == "/sign-in/" %}
         style="display: none;"
+        {% else %}
+            {% if request.path == "/request-password/" %}
+            style="display: none;"
+            {% endif %}
+        
         {% endif %}
-     {% endif %}
-     >
+     {% endif %}>
     
     <div id="footer"> 
         <p>&copy; 2017 Wizrobe, Inc.</p>

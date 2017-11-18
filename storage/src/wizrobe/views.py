@@ -4,22 +4,15 @@ from django.contrib import messages
 from .forms import SignUpForm
 
 def home(request):
-    
     return render_to_response("home.html", locals(), context_instance=RequestContext(request))
 
-def thankyou(request):
-    
-    return render_to_response("thankyou.html", locals(), context_instance=RequestContext(request))
-
 def contactus(request):
-    
     return render_to_response("contactus.html", locals(), context_instance=RequestContext(request))
 
 def signin(request):
     return render_to_response("signin.html", locals(), context_instance=RequestContext(request))
 
 def signup(request):
-    
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -33,3 +26,6 @@ def signup(request):
         form = SignUpForm()
     
     return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
+
+def requestpassword(request):
+    return render_to_response("requestpassword.html", locals(), context_instance=RequestContext(request))
