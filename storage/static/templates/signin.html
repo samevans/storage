@@ -13,20 +13,22 @@
 	{% endif %}
 	
 	<div id="signin" class="signin_rectangles">
-		Username or email address
-		
-		<div class="signin_inputbox" >
-            <input id="username" class="form-control input-md">
-        </div>
-		
-		Password
-		<span style="float:right;"><a href="{% url "requestpassword" %}">Forgot Password?</a></span>
-		
-		<div class="signin_inputbox" >
-            <input id="password" class="form-control input-md">
-        </div>
-		
-		<input id="signin_button" type="submit" class="form-control btn-primary signup_button" value="Sign In">
+		<form method='POST' action=''>
+            {% csrf_token %}
+            {% for field in form %}
+				{% if field.label == "Username" %}
+					Username or email address
+				{% endif %}
+				{% if field.label == "Password" %}
+					Password
+					<span style="float:right;"><a href="{% url "requestpassword" %}">Forgot Password?</a></span>
+				{% endif %}
+                <div class="signin_inputbox" >
+                    <input class="form-control input-md" name="{{ field.html_name }}" type="text" placeholder="{{ field.label }}">
+                </div>
+            {% endfor %}
+			<input id="signin_button" type="submit" class="form-control btn-primary signup_button" value="Sign In">
+        </form>
 	</div>
 	
 	<div id="newtowizrobe" class="signin_rectangles">
