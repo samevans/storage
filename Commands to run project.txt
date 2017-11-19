@@ -17,3 +17,12 @@ https://docs.djangoproject.com/en/1.11/topics/forms/
 
 Working with messages:
 https://docs.djangoproject.com/en/1.11/ref/contrib/messages/
+
+User authentication:
+https://docs.djangoproject.com/en/1.11/topics/auth/default/#user-objects
+
+
+For when I'm ready to post up:
+name.com
+webfaction.com
+https://www.youtube.com/watch?v=g-8EkVxh34g
