@@ -1,3 +1,17 @@
+/*========================================
+Navbar
+==========================================*/
+
+.sign_options {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.or {
+    margin-top: 16px !important;
+}
+/*==========================================*/
+
 .stretchheader {
     width: 100% !important;
     position: relative;

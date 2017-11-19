@@ -1,5 +1,4 @@
 <div class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation"
-     
      {% if request.path == "/sign-up/" %}
      style="display: none; height: 0px;"
      {% endif %}
@@ -23,13 +22,15 @@
           <ul class="nav navbar-nav navbar-right">
             
             
-            <li><a href='{% url "contactus" %}'>Help<span class="sr-only">(current)</span></a></li>
-            <li><a href='{% url "signin" %}'>Sign In<span class="sr-only">(current)</span></a></li>
-            <li>
+            <!--<li><a href='{% url "contactus" %}'>Help<span class="sr-only">(current)</span></a></li>-->
+            <li><a href='{% url "signin" %}' class="sign_options">Sign In<span class="sr-only">(current)</span></a></li>
+            <li><p class="or">or</p></li>
+            <li><a href='{% url "signup" %}' class="sign_options">Sign Up<span class="sr-only">(current)</span></a></li>
+            <!--<li>
                 <p class="navbar-btn">
                     <a href="#" class="btn btn-danger" style="border-radius: 0; background: #367036;">I want to rent my space!</a>
                 </p>
-            </li>
+            </li>-->
           </ul>
         </div><!--/.navbar-collapse -->
       </div>

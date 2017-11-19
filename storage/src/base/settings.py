@@ -1,5 +1,5 @@
 """
-Django settings for mvp_landing project.
+Django settings for the wizrobe project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -7,6 +7,8 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
+
+EMAILS_ON = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -95,3 +97,9 @@ if DEBUG:
         os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
     )
     
+from .emails import *
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST = EMAIL_HOST
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_PORT = EMAIL_PORT

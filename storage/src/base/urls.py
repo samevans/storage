@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^$', 'wizrobe.views.home', name='home'),
     url(r'^contact-us/$', 'wizrobe.views.contactus', name='contactus'),
     url(r'^sign-up/$', 'wizrobe.views.signup', name='signup'),
-    url(r'^sign-in/$', 'wizrobe.views.signin', name='signin'),
+    url(r'^login/$', 'wizrobe.views.signin', name='signin'),
     url(r'^request-password/$', 'wizrobe.views.requestpassword', name='requestpassword'),
     url(r'^admin/', include(admin.site.urls)),
 )
