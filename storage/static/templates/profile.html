@@ -4,8 +4,9 @@
     <div class="jumbotron">
       <div class="container">
 		{% if user.is_authenticated %}
-		        <h1>Profile</h1>
-
+		        <h1>{{ user }}</h1>
+                <h1>{{ user.first_name }}</h1>
+                <h1>{{ user.last_name }}</h1>
 		{% endif%}
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>

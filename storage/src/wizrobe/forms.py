@@ -9,10 +9,7 @@ class RegistrationForm(UserCreationForm):
         model = User
         fields = (
             'username',
-            'first_name',
-            'last_name',
             'email',
-            # 'password'
         )
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)

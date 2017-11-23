@@ -18,8 +18,8 @@ urlpatterns = patterns('',
     
     # Profile
     url(r'^profile/$', 'wizrobe.views.view_profile', name='viewprofile'),
-    url(r'^profile/edit/', 'wizrobe.views.edit_profile', name='viewprofile'),
-    url(r'^accounts/profile/$', 'wizrobe.views.goto_dashboard', name='accounts_profile'),
+    url(r'^profile/edit/', 'wizrobe.views.edit_profile', name='editprofile'),
+    url(r'^accounts/profile/$', 'wizrobe.views.successfully_loggedin', name='accounts_profile'),
     
     url(r'^dashboard/$', 'wizrobe.views.dashboard', name='dashboard'),
     url(r'^admin/', include(admin.site.urls)),

@@ -2,24 +2,34 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 from .forms import RegistrationForm
 
 def home(request):
-    return render_to_response("home.html", locals(), context_instance=RequestContext(request))
+    args = {'request':request}
+    if request.user.is_authenticated is not AnonymousUser:
+        args['user'] = request.user
+    
+    return render(request, 'home.html', args)
 
 
 @login_required(login_url='/login')
 def dashboard(request):
+    args = {'request':request}
+    if request.user.is_authenticated is not AnonymousUser:
+        args['user'] = request.user
     
-    print request.user
-    
-    return render_to_response("dashboard.html", locals(), context_instance=RequestContext(request))
+    return render(request, 'dashboard.html', args)
+
 
 def contactus(request):
-    return render_to_response("contactus.html", locals(), context_instance=RequestContext(request))
+    args = {'request':request}
+    if request.user.is_authenticated is not AnonymousUser:
+        args['user'] = request.user
+    
+    return render(request, 'contactus.html', args)
 
 
 @login_required(login_url='/login')
@@ -50,24 +60,31 @@ def signup(request):
         form = RegistrationForm()
         
     args = {'form': form, 'request': request}
+
     return render(request, 'signup.html', args)
-    # return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
 
 
 def requestpassword(request):
-    return render_to_response("requestpassword.html", locals(), context_instance=RequestContext(request))
+    args = {'request':request}
+    if request.user.is_authenticated is not AnonymousUser:
+        args['user'] = request.user
+    
+    return render(request, 'requestpassword.html', args)
 
 
 @login_required(login_url='/login')
 def view_profile(request):
-    return render_to_response("profile.html", locals(), context_instance=RequestContext(request))
+    args = { 'user': request.user, 'request': request }
+    return render(request, 'profile.html', args)
 
 
 @login_required(login_url='/login')
 def edit_profile(request):
+    args = { 'user': request.user, 'request': request }
     return render_to_response("profile_edit.html", locals(), context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login')
-def goto_dashboard(request):
-    return HttpResponseRedirect('/dashboard')
+def successfully_loggedin(request):
+    return HttpResponseRedirect('/profile')
+    # return HttpResponseRedirect('/dashboard')
