@@ -8,7 +8,6 @@
 
 ` python manage.py syncdb `
 
-
 Clear browser cache to update css:
 command+shift+delete
 

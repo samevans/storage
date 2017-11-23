@@ -1,17 +1,15 @@
+from django.contrib.auth.models import User
 from django.db import models
-from django.utils.encoding import smart_unicode
+from django.db.models.signals import post_save
 
-# not sure why this is needed but it causes import errors somewhere
-class SignUp(models.Model):
-    first_Name = models.CharField(max_length=120, null=False, blank=False)
-    last_Name = models.CharField(max_length=120, null=False, blank=False)
-    email = models.EmailField(null=False, blank=False)
-    password = models.CharField(max_length=120, null=False, blank=False)
-    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    zipcode = models.CharField(max_length=120, default='')
+    city = models.CharField(max_length=120, default='')
+    phone = models.IntegerField(default=0)
     
-    def __unicode__(self):
-        return smart_unicode(self.email)
+def create_profile(sender, **kwargs):
+    if kwargs['created']:
+        user_profile = UserProfile.objects.create(user=kwargs['instance'])
     
-
-    
+post_save.connect(create_profile, sender=User)
