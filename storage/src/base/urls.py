@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.views import login
+from django.contrib.auth.views import login, logout
 
 admin.autodiscover()
 
@@ -12,7 +12,6 @@ urlpatterns = patterns('',
     
     # Sign In
     url(r'^sign-up/$', 'wizrobe.views.signup', name='signup'),
-    # url(r'^login/$', 'wizrobe.views.signin', name='signin'),
     url(r'^login/$', login, {'template_name': 'signin.html'}, name='signin'),
     url(r'^logout/$', 'wizrobe.views.signout', name='signout'),
     url(r'^requestpassword/$', 'wizrobe.views.requestpassword', name='requestpassword'),

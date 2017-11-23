@@ -42,19 +42,16 @@ def signup(request):
                 to_list = [save_signup.email, settings.EMAIL_HOST_USER]
                 send_mail(subject, message, from_email, to_list, fail_silently=True)
             
-            # for now I am just going to validate user automatically
-            # user = User.objects.create_user(save_signup.email, save_signup.email, save_signup.password)
-            # print '1'
-            # user.save()
-            
             messages.success(request, 'We have received your request. Please validate through your email.')
             return HttpResponseRedirect('/login')
         else:
             print form.is_valid(), form.errors, type(form.errors)
     else:
         form = RegistrationForm()
-    
-    return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
+        
+    args = {'form': form, 'request': request}
+    return render(request, 'signup.html', args)
+    # return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
 
 
 def requestpassword(request):

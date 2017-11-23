@@ -37,6 +37,7 @@
                 <li><p class="or">or</p></li>
                 <li><a href='{% url "signup" %}' class="sign_options">Sign Up<span class="sr-only">(current)</span></a></li>
             {% endif %}
+            <li><a href='{% url "signup" %}' class="sign_options">{{request.path}}<span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
