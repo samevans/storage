@@ -11,7 +11,9 @@
 			<h1 class="signupreceived">{{ message }}</h1>
 		{% endfor %}
 	{% endif %}
-	
+	{% if form.errors %}
+		<h1 class="signupreceived">Your username and password didn't match. Please try again.</h1>
+	{% endif %}
 	<div id="signin" class="signin_rectangles">
 		<form method='POST' action=''>
             {% csrf_token %}

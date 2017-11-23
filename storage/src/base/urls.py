@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.views import login
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -10,14 +12,16 @@ urlpatterns = patterns('',
     
     # Sign In
     url(r'^sign-up/$', 'wizrobe.views.signup', name='signup'),
-    url(r'^login/$', 'wizrobe.views.signin', name='signin'),
+    # url(r'^login/$', 'wizrobe.views.signin', name='signin'),
+    url(r'^login/$', login, {'template_name': 'signin.html'}, name='signin'),
     url(r'^logout/$', 'wizrobe.views.signout', name='signout'),
     url(r'^requestpassword/$', 'wizrobe.views.requestpassword', name='requestpassword'),
     
     # Profile
     url(r'^profile/$', 'wizrobe.views.view_profile', name='viewprofile'),
     url(r'^profile/edit/', 'wizrobe.views.edit_profile', name='viewprofile'),
-
+    url(r'^accounts/profile/$', 'wizrobe.views.goto_dashboard', name='accounts_profile'),
+    
     url(r'^dashboard/$', 'wizrobe.views.dashboard', name='dashboard'),
     url(r'^admin/', include(admin.site.urls)),
 )
