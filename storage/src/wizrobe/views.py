@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
@@ -80,8 +81,18 @@ def view_profile(request):
 
 @login_required(login_url='/login')
 def edit_profile(request):
-    args = { 'user': request.user, 'request': request }
-    return render_to_response("profile_edit.html", locals(), context_instance=RequestContext(request))
+    if request.method == 'POST':
+        form = UserChangeForm(request.POST, instance=request.user)
+        
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/profile')
+        
+    else:
+        form = UserChangeForm(instance=request.user)
+    
+    args = { 'form':form, 'request':request }
+    return render(request, 'profile_edit.html', args)
 
 
 @login_required(login_url='/login')

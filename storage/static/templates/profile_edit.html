@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
-{% block jumbotron%}
-    <div class="jumbotron">
-      <div class="container">
-		{% if user.is_authenticated %}
-		        <h1>ProfileEdit</h1>
-
-		{% endif%}
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-{% endblock %}
-
 {% block content %}
-    <div class='col-sm-12' style='text-align: center;'>
-        <h4>Contact Us</h4>
+
+    <div class="container">
+        <h1>Your Profile</h1>
+        
+        {% if user.is_authenticated %}
+            <p>{{ user }}</p>
+            <p>{{ user.first_name }}</p>
+            <p>{{ user.last_name }}</p>
+        {% endif %}
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+        
     </div>
-{% endblock%}
+    
+{% endblock %}
