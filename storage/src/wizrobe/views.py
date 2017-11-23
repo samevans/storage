@@ -12,13 +12,17 @@ def home(request):
 
 @login_required(login_url='/login')
 def dashboard(request):
+    
+    print request.user
+    
     return render_to_response("dashboard.html", locals(), context_instance=RequestContext(request))
 
 def contactus(request):
     return render_to_response("contactus.html", locals(), context_instance=RequestContext(request))
 
+
 def signin(request):
-    
+
     if request.method == "POST":
         form = LoginForm(request.POST)
         
@@ -36,12 +40,14 @@ def signin(request):
     else:
         form = LoginForm()
         
-        
     return render_to_response("signin.html", locals(), context_instance=RequestContext(request))
 
+
+@login_required(login_url='/login')
 def signout(request):
     logout(request)
     return HttpResponseRedirect('/')
+
 
 def signup(request):
     if request.method == "POST":
@@ -72,5 +78,14 @@ def signup(request):
     
     return render_to_response("signup.html", locals(), context_instance=RequestContext(request))
 
+
 def requestpassword(request):
     return render_to_response("requestpassword.html", locals(), context_instance=RequestContext(request))
+
+@login_required(login_url='/login')
+def view_profile(request):
+    return render_to_response("profile.html", locals(), context_instance=RequestContext(request))
+
+@login_required(login_url='/login')
+def edit_profile(request):
+    return render_to_response("profile_edit.html", locals(), context_instance=RequestContext(request))

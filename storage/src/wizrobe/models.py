@@ -20,3 +20,4 @@ class LogIn(models.Model):
     
     def __unicode__(self):
         return smart_unicode(self.email)
+    
