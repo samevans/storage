@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top navbar-colours" role="navigation"
+<div id="navbar" class="navbar navbar-default navbar-fixed-top navbar-colours" role="navigation"
      {% if request.path == "/sign-up/" %}
      style="display: none; height: 0px;"
      {% endif %}
@@ -28,7 +28,7 @@
             
             {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <a href="{% url "viewprofile" %}"><button class="dropbtn">{{ user.username }}</button></a>
+                    <a href="{% url "viewprofile" %}"><button class="dropbtn"><img src="{{ user.userprofile.image_url }}" class="profilepicture"></button></a>
                     <div class="dropdown-content">
                       <a href="{% url "viewprofile" %}">Your profile</a>
                       <hr class="nomargins">

@@ -17,9 +17,18 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    
+    <div id="profilepicturefields" class="col-md-5">
+        <div class="profilepicturetext"><p>Profile picture</p></div>
         
-    <div class="col-md-5">
-        <p>Profile picture</p>
+        <div style="text-align: center;">
+            <img src="{{ user.userprofile.image_url }}" class="profilepicture">
+        </div>
+        
+        <div class="profilepictureupload">
+            <button class="uploadbutton"><p class="verticallycenter">Upload new picture</p></button>
+        </div>
     </div>
+    
     
 {% endblock %}

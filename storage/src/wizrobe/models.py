@@ -5,12 +5,19 @@ from PIL import Image
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    zipcode = models.CharField(max_length=120, default='')
-    city = models.CharField(max_length=120, default='')
-    phone = models.IntegerField(default=0)
+    zipcode = models.CharField(max_length=120, default='', blank=True)
+    city = models.CharField(max_length=120, default='', blank=True)
+    phone = models.IntegerField(default=0, blank=True)
     image = models.ImageField(upload_to='profile_image', blank=True)
+    
     def __str__(self):
         return self.user.username
+    
+    def image_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        else:
+            return '/static/assets/defaultprofile.jpg'
     
 def create_profile(sender, **kwargs):
     if kwargs['created']:
