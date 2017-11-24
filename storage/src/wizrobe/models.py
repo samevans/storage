@@ -13,3 +13,10 @@ def create_profile(sender, **kwargs):
         user_profile = UserProfile.objects.create(user=kwargs['instance'])
     
 post_save.connect(create_profile, sender=User)
+
+
+
+class PersonalSettings(models.Model):
+    profile = models.CharField(max_length=120, default='')
+    account = models.CharField(max_length=120, default='')
+    billing = models.CharField(max_length=120, default='')

@@ -26,7 +26,7 @@
 					<span style="float:right;"><a href="{% url "requestpassword" %}">Forgot Password?</a></span>
 				{% endif %}
                 <div class="signin_inputbox" >
-                    <input class="form-control input-md" name="{{ field.html_name }}" type="text" placeholder="{{ field.label }}">
+                    <input class="form-control input-md" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
                 </div>
             {% endfor %}
 			<input id="signin_button" type="submit" class="form-control btn-primary signup_button" value="Sign In">

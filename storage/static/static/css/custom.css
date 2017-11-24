@@ -253,3 +253,45 @@ Sign In Page
     text-align: left;
     font-weight: bold;
 }
+
+/*========================================
+Edit Profile
+==========================================*/
+
+#personalsettings {
+    background-color: #F8F8FA;
+    width: 250px;
+    height: auto;
+    border:2px solid #F1F1F1;
+    border-radius: 4px !important;
+    margin: 20px 30px;
+    font-size: 9px;
+    font-family: helvetica;
+    float: left;
+}
+
+#personalsettings h1 {
+    padding: 0px 10px;
+    color: #586069;
+}
+
+#personalsettings a {
+    padding: 0px 10px 10px;
+    font-size: 2em;
+    float: none;
+}
+
+#personalsettings .settingsfields {
+    background-color: #FFFFFF;
+    height: 30px;
+    margin-bottom: 2px;
+}
+
+#profile {
+    font-family: helvetica;
+}
+
+#profile h1 {
+    margin-top: 30px;
+}
+

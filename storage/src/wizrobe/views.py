@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
-from .forms import RegistrationForm
+from .forms import RegistrationForm, PersonalSettingsForm
 
 def home(request):
     args = {'request':request}
@@ -91,7 +91,10 @@ def edit_profile(request):
     else:
         form = UserChangeForm(instance=request.user)
     
-    args = { 'form':form, 'request':request }
+    
+    settings = PersonalSettingsForm()
+    
+    args = { 'form':form, 'request':request , 'settings':settings}
     return render(request, 'profile_edit.html', args)
 
 

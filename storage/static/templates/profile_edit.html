@@ -3,19 +3,42 @@
 {% block content %}
 
     <div class="container">
-        <h1>Your Profile</h1>
+        <div id="personalsettings">
+            
+            <h1>Personal settings</h1>
+            
+            {% for field in settings %}
+                <div class="settingsfields">
+                    <a>{{ field.label }}</a>
+                </div>
+            {% endfor %}
+            
+        </div>
         
-        {% if user.is_authenticated %}
-            <p>{{ user }}</p>
-            <p>{{ user.first_name }}</p>
-            <p>{{ user.last_name }}</p>
-        {% endif %}
         
-        <form method="post">
+        <div id="profile">
+            <h1>Public profile</h1>
+            <hr>
+            <div>
+                {% if user.is_authenticated %}
+                    <p>{{ user }}</p>
+                    <p>{{ user.first_name }}</p>
+                    <p>{{ user.last_name }}</p>
+                {% endif %}
+            </div>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <!--<form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Submit</button>
-        </form>
+        </form>-->
         
     </div>
     

@@ -20,7 +20,7 @@
             {% csrf_token %}
             {% for field in form %}
                 <div class="signup_box" >
-                    <input class="form-control input-lg" name="{{ field.html_name }}" type="text" placeholder="{{ field.label }}">
+                    <input class="form-control input-lg" name="{{ field.html_name }}" {% if 'Password' in field.label %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
                 </div>
             {% endfor %}
             <p><input type="submit" class="signup_box btn btn-primary btn-lg signup_button" value="Sign Up"></p>
