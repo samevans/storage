@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container row">
+	<div id="personalsettings" class="col-md-3">
+		<h1>Personal settings</h1>
+		{% for field in settings %}
+		    <div class="settingsfields">
+			   
+			   <a{% if field.label == "Profile" %}
+					 href="{% url "settingsprofile" %}"
+				  {% endif %}
+				  {% if field.label == "Account" %}
+					 href="{% url "settingsaccount" %}"
+				  {% endif %}
+			   >{{ field.label }}</a>
+		    </div>
+		{% endfor %}
+	 </div>
+	
+	<div id="profile" class="col-md-9 row">
+		{% block settingscontent %}
+		{% endblock %}
+	</div>
+	
+</div>
+
+{% endblock %}
