@@ -1,4 +1,74 @@
-.navbar-custom {
+/*========================================
+Navbar
+==========================================*/
+
+.nomargins{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.navbar_font {
+    font-family: helvetica;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar_font_textup {
+    margin-top: 14px !important;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #FFFFFF;
+    color: #777;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-family: helvetica;
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #FFFFFF;
+}
+
+
+
+.navbar-colours {
     color: #FFFFFF !important;
     background-color: #FFFFFF !important;
     border-color: transparent !important;

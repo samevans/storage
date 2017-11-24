@@ -66,14 +66,6 @@ def signup(request):
     return render(request, 'signup.html', args)
 
 
-def requestpassword(request):
-    args = {'request':request}
-    if request.user.is_authenticated is not AnonymousUser:
-        args['user'] = request.user
-    
-    return render(request, 'requestpassword.html', args)
-
-
 @login_required(login_url='/login')
 def view_profile(request):
     args = { 'user': request.user, 'request': request }
@@ -100,16 +92,15 @@ def settings_profile(request):
 
 @login_required(login_url='/login')
 def settings_account(request):
+
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
         
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/settings/account')
-        
-    else:
-        form = PasswordChangeForm(user=request.user)
-    
+            
+    form = PasswordChangeForm(user=request.user)
     settings = PersonalSettingsForm()
     
     args = { 'form':form, 'request':request , 'settings':settings}

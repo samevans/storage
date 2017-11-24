@@ -31,6 +31,10 @@ class EditProfileForm(UserChangeForm):
             'password',
             'username'
         )
+        
+class EditUsernameForm(UserChangeForm):
+    class Meta:
+        model = User
     
 # Config Data
 class PersonalSettingsForm(forms.ModelForm):
