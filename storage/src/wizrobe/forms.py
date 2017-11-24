@@ -21,6 +21,15 @@ class RegistrationForm(UserCreationForm):
         return user
     
     
+class EditProfileForm(UserChangeForm):
+    class Meta:
+        model = User
+        fields = (
+            'first_name',
+            'last_name',
+            'email'
+        )
+    
 # Config Data
 class PersonalSettingsForm(forms.ModelForm):
     class Meta:

@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
-from .forms import RegistrationForm, PersonalSettingsForm
+from .forms import RegistrationForm, PersonalSettingsForm, EditProfileForm
 
 def home(request):
     args = {'request':request}
@@ -82,15 +82,14 @@ def view_profile(request):
 @login_required(login_url='/login')
 def edit_profile(request):
     if request.method == 'POST':
-        form = UserChangeForm(request.POST, instance=request.user)
+        form = EditProfileForm(request.POST, instance=request.user)
         
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/profile')
         
     else:
-        form = UserChangeForm(instance=request.user)
-    
+        form = EditProfileForm(instance=request.user)
     
     settings = PersonalSettingsForm()
     
