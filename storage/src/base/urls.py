@@ -18,7 +18,8 @@ urlpatterns = patterns('',
     
     # Profile
     url(r'^profile/$', 'wizrobe.views.view_profile', name='viewprofile'),
-    url(r'^profile/edit/', 'wizrobe.views.edit_profile', name='editprofile'),
+    url(r'^settings/profile/', 'wizrobe.views.settings_profile', name='settingsprofile'),
+    url(r'^settings/account/', 'wizrobe.views.settings_account', name='settingsaccount'),
     url(r'^accounts/profile/$', 'wizrobe.views.successfully_loggedin', name='accounts_profile'),
     
     url(r'^dashboard/$', 'wizrobe.views.dashboard', name='dashboard'),

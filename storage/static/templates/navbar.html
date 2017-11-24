@@ -31,6 +31,8 @@
                     <button class="dropbtn">{{ user.username }}</button>
                     <div class="dropdown-content">
                       <a href="{% url "viewprofile" %}">Your profile</a>
+                      <hr class="nomargins">
+                      <a href="{% url "settingsprofile" %}">Settings</a>
                       <a href="{% url "signout" %}">Sign out</a>
                     </div>
                   </div>

@@ -27,7 +27,9 @@ class EditProfileForm(UserChangeForm):
         fields = (
             'first_name',
             'last_name',
-            'email'
+            'email',
+            'password',
+            'username'
         )
     
 # Config Data

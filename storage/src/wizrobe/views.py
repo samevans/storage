@@ -80,7 +80,7 @@ def view_profile(request):
 
 
 @login_required(login_url='/login')
-def edit_profile(request):
+def settings_profile(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
         
@@ -94,7 +94,25 @@ def edit_profile(request):
     settings = PersonalSettingsForm()
     
     args = { 'form':form, 'request':request , 'settings':settings}
-    return render(request, 'profile_edit.html', args)
+    return render(request, 'settings_profile.html', args)
+
+
+@login_required(login_url='/login')
+def settings_account(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+        
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/profile')
+        
+    else:
+        form = EditProfileForm(instance=request.user)
+    
+    settings = PersonalSettingsForm()
+    
+    args = { 'form':form, 'request':request , 'settings':settings}
+    return render(request, 'settings_account.html', args)
 
 
 @login_required(login_url='/login')
