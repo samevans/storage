@@ -16,16 +16,16 @@ urlpatterns = patterns('',
     url(r'^sign-up/$', 'wizrobe.views.signup', name='signup'),
     url(r'^login/$', login, {'template_name': 'signin.html'}, name='signin'),
     url(r'^logout/$', 'wizrobe.views.signout', name='signout'),
-    url(r'^requestpassword/$', password_reset, name='requestpassword'),
+    url(r'^requestpassword/$', password_reset, {'template_name': 'requestpassword.html'}, name='requestpassword'),
     url(r'^requestpassword/done/$', password_reset_done, name='password_reset_done'),
     url(r'^requestpassword/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm, name='password_reset_confirm'),
     url(r'^requestpassword/complete/$', password_reset_complete, name='password_reset_complete'),
+    url(r'^accounts/profile/$', 'wizrobe.views.successfully_loggedin', name='accounts_profile'),
 
-    # Profiles
+    # Profile
     url(r'^profile/$', 'wizrobe.views.view_profile', name='viewprofile'),
     url(r'^settings/profile/', 'wizrobe.views.settings_profile', name='settingsprofile'),
     url(r'^settings/account/', 'wizrobe.views.settings_account', name='settingsaccount'),
-    url(r'^accounts/profile/$', 'wizrobe.views.successfully_loggedin', name='accounts_profile'),
     
     url(r'^dashboard/$', 'wizrobe.views.dashboard', name='dashboard'),
     url(r'^admin/', include(admin.site.urls)),

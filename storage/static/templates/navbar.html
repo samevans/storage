@@ -28,7 +28,7 @@
             
             {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <button class="dropbtn">{{ user.username }}</button>
+                    <a href="{% url "viewprofile" %}"><button class="dropbtn">{{ user.username }}</button></a>
                     <div class="dropdown-content">
                       <a href="{% url "viewprofile" %}">Your profile</a>
                       <hr class="nomargins">
