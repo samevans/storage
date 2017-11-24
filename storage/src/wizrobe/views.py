@@ -2,11 +2,12 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 from .forms import RegistrationForm, PersonalSettingsForm, EditProfileForm
+
 
 def home(request):
     args = {'request':request}
@@ -100,14 +101,14 @@ def settings_profile(request):
 @login_required(login_url='/login')
 def settings_account(request):
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
+        form = PasswordChangeForm(data=request.POST, user=request.user)
         
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/profile')
+            return HttpResponseRedirect('/settings/account')
         
     else:
-        form = EditProfileForm(instance=request.user)
+        form = PasswordChangeForm(user=request.user)
     
     settings = PersonalSettingsForm()
     

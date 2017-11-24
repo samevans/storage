@@ -14,8 +14,7 @@ def create_profile(sender, **kwargs):
     
 post_save.connect(create_profile, sender=User)
 
-
-
+# DataConfig
 class PersonalSettings(models.Model):
     profile = models.CharField(max_length=120, default='')
     account = models.CharField(max_length=120, default='')
