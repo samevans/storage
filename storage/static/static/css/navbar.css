@@ -30,18 +30,17 @@ Navbar
     pointer-events: none !important;
 }
 
-#navbar li a {
-    padding-right: 7px;
-    padding-left: 7px;
+#navbar .stupidor {
+    margin-top: 10px !important;
 }
 
-/* The 'or' text */
-#navbar .textup {
-    margin-top: 15px !important;
+#navbar li a{
+    padding-right: 5px !important;
+    padding-left: 5px !important;
 }
 
-.nomargins{
-    margin: 0px 0px 0px 0px;
+#navbar hr {
+    margin: 5px 1px;
 }
 
 /* Dropdown Button */
@@ -50,6 +49,7 @@ Navbar
     color: #777;
     padding: 10px;
     border: none;
+    outline: none;
     cursor: pointer;
 }
 
@@ -57,38 +57,43 @@ Navbar
 .dropdown {
     position: relative;
     display: inline-block;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: transparent;
+    outline: none;
+    float: right;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    right: 0;
+    z-index: 100;
+    width: 180px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style: none;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    box-shadow: 0 3px 12px rgba(27,31,35,0.15);
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
-    font-family: helvetica;
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
+.dropdown-content a, p {
     display: block;
+    color: #24292E;
+    padding: 4px 10px 4px 15px;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 15px !important;
+    font-weight: normal !important;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #0366d6;
+    color: #FFFFFF;
+    text-decoration: none;
+}
 
 

@@ -39,10 +39,17 @@
                 {% if user.is_authenticated %}
                 
                     <div class="dropdown">
-                        <a href="{% url "viewprofile" %}"><button class="dropbtn"><img src="{{ user.userprofile.image_url }}" class="profilepicture"></button></a>
-                        <div class="dropdown-content">
+                        
+                        <button class="dropbtn" onclick="myFunction();">
+                            <img src="{{ user.userprofile.image_url }}" class="profilepicture">
+                        </button>
+                        
+                        <div id="myDropdown" class="dropdown-content">
+                            
+                            <p>Signed in as <b>{{ user.username }}</b></p>
+                            <hr>
                             <a href="{% url "viewprofile" %}">Your profile</a>
-                            <hr class="nomargins">
+                            <hr>
                             <a href="{% url "settingsprofile" %}">Settings</a>
                             <a href="{% url "signout" %}">Sign out</a>
                         </div>
@@ -51,7 +58,7 @@
                 {% else %}
                 
                     <li><a href='{% url "signin" %}'>Sign In<span class="sr-only">(current)</span></a></li>
-                    <li><p class="textup">or</p></li>
+                    <li><p class="stupidor" style="padding-right: 0px !important;padding-left: 0px !important;">or</p></li>
                     <li><a href='{% url "signup" %}' style="padding-right: 0px;">Sign Up<span class="sr-only">(current)</span></a></li>
                     
                 {% endif %}
