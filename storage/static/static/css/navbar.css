@@ -3,7 +3,7 @@ Navbar
 ==========================================*/
 
 #navbar {
-    background-color: transparent !important;
+    background-color: #24292E !important;
     border-color: transparent !important;
     height: 50px !important;
     width: 100%;
@@ -31,12 +31,14 @@ Navbar
 }
 
 #navbar .stupidor {
-    margin-top: 10px !important;
+    margin-top: 15px !important;
+    color: #586069 !important;
 }
 
 #navbar li a{
     padding-right: 5px !important;
     padding-left: 5px !important;
+    color: #FFFFFF;
 }
 
 #navbar hr {
@@ -44,7 +46,7 @@ Navbar
 }
 
 /* Dropdown Button */
-.dropbtn {
+#navbar .dropbtn {
     background-color: transparent;
     color: #777;
     padding: 10px;
@@ -54,7 +56,7 @@ Navbar
 }
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
+#navbar .dropdown {
     position: relative;
     display: inline-block;
     outline: none;
@@ -62,7 +64,7 @@ Navbar
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+#navbar .dropdown-content {
     display: none;
     position: absolute;
     right: 0;
@@ -79,18 +81,29 @@ Navbar
 }
 
 /* Links inside the dropdown */
-.dropdown-content a, p {
-    display: block;
-    color: #24292E;
-    padding: 4px 10px 4px 15px;
-    text-decoration: none;
-    overflow: hidden;
+#navbar .dropdown-content a {
+    display: block !important;
+    color: #24292E !important;
+    padding: 4px 10px 4px 15px !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+}
+
+/* Links inside the dropdown */
+#navbar .dropdown-content p {
+    display: block !important;
+    color: #24292E !important;
+    padding: 4px 10px 4px 15px !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
     font-size: 15px !important;
     font-weight: normal !important;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+#navbar .dropdown-content a:hover {
     background-color: #0366d6;
     color: #FFFFFF;
     text-decoration: none;

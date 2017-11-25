@@ -24,8 +24,8 @@
         <div style="position:relative;left:10%;">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">
-                        <img class="wizrobelogo" src="/static/assets/wizrobelogo3.png">
+                    <a style="padding-top: 10px;" href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">
+                        <img class="wizrobelogo" src="/static/assets/wizrobewhitelogo2.png">
                     </a>
                 </li>
             </ul>
@@ -44,9 +44,9 @@
                             <img src="{{ user.userprofile.image_url }}" class="profilepicture">
                         </button>
                         
-                        <div id="myDropdown" class="dropdown-content">
+                        <div id="navDropdown" class="dropdown-content">
                             
-                            <p>Signed in as <b>{{ user.username }}</b></p>
+                            <p class="text">Signed in as <b>{{ user.username }}</b></p>
                             <hr>
                             <a href="{% url "viewprofile" %}">Your profile</a>
                             <hr>
