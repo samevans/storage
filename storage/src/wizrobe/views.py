@@ -104,14 +104,16 @@ def settings_account(request):
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
         
+        print form
+        
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/settings/account')
             
-    form = PasswordChangeForm(user=request.user)
-    settings = PersonalSettingsForm()
+    else:
+        form = PasswordChangeForm(user=request.user)
     
-    args = { 'form':form, 'request':request , 'settings':settings}
+    args = { 'form':form, 'request':request , 'settings':PersonalSettingsForm()}
     return render(request, 'settings_account.html', args)
 
 

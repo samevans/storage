@@ -5,6 +5,13 @@
     <h1>Change password</h1>
     <hr style="margin-bottom: 5px;margin-top: 0px;">
     <div id="changepassword">
+        
+        {% if messages %}
+		{% for message in messages %}
+			<h1 class="signupreceived">{{ message }}</h1>
+		{% endfor %}
+        {% endif %}
+        
         <form method='POST'>
             {% csrf_token %}
             
@@ -14,6 +21,7 @@
                 {% else %}
                     <p>{{field.label}}</p>
                 {% endif %}
+                {{field.errors.as_text}}
                 <div>
                     <input class="form-control input-md textboxes" name="{{ field.html_name }}" type="password"">
                 </div>
@@ -29,6 +37,7 @@
     <h1>Change username</h1>
     <hr style="margin-bottom: 5px;margin-top: 0px;">
     
-    <h1>Delete account</h1>
+    <h1 style="color:#FF0000;">Delete account</h1>
     <hr style="margin-bottom: 5px;margin-top: 0px;">
+    <p style="font-weight: normal">Once you delete your account there is no going back. Please be certain.</p>
 {% endblock %}
