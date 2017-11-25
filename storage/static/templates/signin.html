@@ -2,39 +2,47 @@
 
 {% block content %}
 
-	<div style='text-align: center; letter-spacing: -.07em;'>
+	<div class="accountheader">
 		<h3>Sign in to Wizrobe</h3>
 	</div>
 	
 	{% if messages %}
 		{% for message in messages %}
-			<h1 class="signupreceived">{{ message }}</h1>
+			<p class="accountmessage">{{ message }}</p>
 		{% endfor %}
 	{% endif %}
+	
 	{% if form.errors %}
-		<h1 class="signupreceived">Your username and password didn't match. Please try again.</h1>
+		<p class="accountmessage">Your username and password didn't match. Please try again.</p>
 	{% endif %}
-	<div id="signin" class="signin_rectangles">
+	
+	<div class="accountbox" style="height: 255px;">
 		<form method='POST' action=''>
             {% csrf_token %}
+			
             {% for field in form %}
+			
 				{% if field.label == "Username" %}
-					Username or email address
+					<p>Username or email address</p>
 				{% endif %}
+				
 				{% if field.label == "Password" %}
-					Password
-					<span style="float:right;"><a href="{% url "requestpassword" %}">Forgot Password?</a></span>
+					<p>Password
+					<span style="float:right;"><a href="{% url "requestpassword" %}">Forgot Password?</a></span></p>
 				{% endif %}
-                <div class="signin_inputbox" >
+				
+                <div class="accountinput" >
                     <input class="form-control input-md" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
                 </div>
+				
             {% endfor %}
-			<input id="signin_button" type="submit" class="form-control btn-primary signup_button" value="Sign In">
+			
+			<input type="submit" class="form-control btn-primary signup_button accountsubmit" value="Sign In">
         </form>
 	</div>
 	
-	<div id="newtowizrobe" class="signin_rectangles">
-		New to Wizrobe? <a href="{% url "signup" %}">Create an account</a>.
+	<div class="accountbox" style="text-align: center;height:75px;">
+		<p>New to Wizrobe? <a href="{% url "signup" %}">Create an account</a>.</p>
 	</div>
 
 {% endblock%}
