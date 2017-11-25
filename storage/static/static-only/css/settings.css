@@ -97,15 +97,3 @@ Profile Picture Options
     border:1px solid #CCCED0;
     background-color: #eff3f6;
 }
-
-
-#profilepicturefields input[type="file"] {
-    display: none;
-}
-
-#profilepicturefields .custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-}

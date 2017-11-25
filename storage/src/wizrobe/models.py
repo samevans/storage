@@ -3,6 +3,10 @@ from django.db import models
 from django.db.models.signals import post_save
 from PIL import Image
 
+# class UserProfileManager(models.Manager):
+#      def get_queryset(self):
+#          return super(UserProfileManager, self).get_queryset().filter(phone=123)
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     zipcode = models.CharField(max_length=120, default='', blank=True)

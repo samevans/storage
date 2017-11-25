@@ -6,8 +6,8 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
-from .forms import RegistrationForm, PersonalSettingsForm, EditProfileForm
-
+from .forms import RegistrationForm, PersonalSettingsForm, EditProfileForm, UserChangeForm
+from .models import UserProfile
 
 def home(request):
     args = {'request':request}
@@ -75,18 +75,24 @@ def view_profile(request):
 @login_required(login_url='/login')
 def settings_profile(request):
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
+        form = UserChangeForm(request.POST, request.FILES)
         
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/profile')
+            # get primarykey for user
+            _user = UserProfile.objects.filter(user=request.user)
+            _userid = _user.values_list('user_id', flat=True).distinct()
+            
+            m = UserProfile.objects.get(pk=_userid[0])
+            m.image = form.cleaned_data['image']
+            m.save()
+            
+            return HttpResponseRedirect('/settings/profile')
+            # return HttpResponseRedirect('/profile')
         
     else:
-        form = EditProfileForm(instance=request.user)
+        form = UserChangeForm(instance=request.user.userprofile)
     
-    settings = PersonalSettingsForm()
-    
-    args = { 'form':form, 'request':request , 'settings':settings}
+    args = { 'form':form, 'request':request, 'settings':PersonalSettingsForm() }
     return render(request, 'settings_profile.html', args)
 
 

@@ -2,6 +2,16 @@
 Navbar
 ==========================================*/
 
+#navbar {
+    
+}
+
+#navbar .profilepicture {
+    border-radius: 3px !important;
+	width: 28px !important;
+	height: 28px !important;
+}
+
 .nomargins{
     margin-bottom: 0px;
     margin-top: 0px;
