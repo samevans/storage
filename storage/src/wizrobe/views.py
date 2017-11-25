@@ -75,19 +75,21 @@ def view_profile(request):
 @login_required(login_url='/login')
 def settings_profile(request):
     if request.method == 'POST':
-        form = UserChangeForm(request.POST, request.FILES)
         
-        if form.is_valid():
-            # get primarykey for user
-            _user = UserProfile.objects.filter(user=request.user)
-            _userid = _user.values_list('user_id', flat=True).distinct()
-            
-            m = UserProfile.objects.get(pk=_userid[0])
-            m.image = form.cleaned_data['image']
-            m.save()
-            
-            return HttpResponseRedirect('/settings/profile')
-            # return HttpResponseRedirect('/profile')
+        if 'POSTprofilepic' in request.POST:
+            form = UserChangeForm(request.POST, request.FILES)
+        
+            if form.is_valid():
+                # get primarykey for user
+                _user = UserProfile.objects.filter(user=request.user)
+                _userid = _user.values_list('user_id', flat=True).distinct()
+                
+                m = UserProfile.objects.get(pk=_userid[0])
+                m.image = form.cleaned_data['image']
+                m.save()
+                
+                return HttpResponseRedirect('/settings/profile')
+                # return HttpResponseRedirect('/profile')
         
     else:
         form = UserChangeForm(instance=request.user.userprofile)

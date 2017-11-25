@@ -9,6 +9,7 @@ from PIL import Image
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
+    name = models.CharField(max_length=120, default='', blank=True)
     zipcode = models.CharField(max_length=120, default='', blank=True)
     city = models.CharField(max_length=120, default='', blank=True)
     phone = models.IntegerField(default=0, blank=True)

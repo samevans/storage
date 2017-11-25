@@ -4,14 +4,31 @@
         
     <h1>Change password</h1>
     <hr style="margin-bottom: 5px;margin-top: 0px;">
-    <div>
+    <div id="changepassword">
         <form method='POST'>
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" name="updatepassword">Update password</button>
+            
+            {% for field in form %}
+                {%if 'confirmation' in field.label %}
+                    <p>Confirm password</p>
+                {% else %}
+                    <p>{{field.label}}</p>
+                {% endif %}
+                <div>
+                    <input class="form-control input-md textboxes" name="{{ field.html_name }}" type="password"">
+                </div>
+            {% endfor %}
+            
+            <div class="forgot">
+                <input name="updatepassword" type="submit" class="submitbutton" value="Update password" style="float:left;">
+                <p><a href="{% url "requestpassword" %}">I forgot my password</a></p>
+            </div>
         </form>
     </div>
     <br/>
     <h1>Change username</h1>
+    <hr style="margin-bottom: 5px;margin-top: 0px;">
+    
+    <h1>Delete account</h1>
     <hr style="margin-bottom: 5px;margin-top: 0px;">
 {% endblock %}
