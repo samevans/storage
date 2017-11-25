@@ -1,47 +1,62 @@
-<div id="navbar" class="navbar navbar-default navbar-fixed-top navbar-colours" role="navigation"
+<div id="navbar" class="container navbar-fixed-top navbar-default" role="navigation"
      {% if request.path == "/sign-up/" %}
-     style="display: none; height: 0px;"
+        style="display: none; height: 0px;"
      {% endif %}
+     
      {% if request.path == "/login/" %}
-     style="display: none; height: 0px;"
+        style="display: none; height: 0px;"
      {% endif %}
 >
-      <div class="container">
-        <div class="navbar-header">
-            
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-
-          <ul class="nav navbar-nav navbar-left">
-            <li>
-                <a href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}"><img class="image2" src="/static/assets/wizrobelogo3.png"></a>
-            </li>
-          </ul>
-          
-          <ul class="nav navbar-nav navbar-right navbar_font">
-            
-            {% if user.is_authenticated %}
-                <div class="dropdown">
-                    <a href="{% url "viewprofile" %}"><button class="dropbtn"><img src="{{ user.userprofile.image_url }}" class="profilepicture"></button></a>
-                    <div class="dropdown-content">
-                      <a href="{% url "viewprofile" %}">Your profile</a>
-                      <hr class="nomargins">
-                      <a href="{% url "settingsprofile" %}">Settings</a>
-                      <a href="{% url "signout" %}">Sign out</a>
-                    </div>
-                  </div>
-            {% else %}
-                <li><a href='{% url "signin" %}'>Sign In<span class="sr-only">(current)</span></a></li>
-                <li><p class="navbar_font_textup">or</p></li>
-                <li><a href='{% url "signup" %}'>Sign Up<span class="sr-only">(current)</span></a></li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
+    
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
     </div>
+    
+    <div class="navbar-collapse collapse">
+    
+    
+        <!-- LEFT -->
+        <div style="position:relative;left:10%;">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">
+                        <img class="wizrobelogo" src="/static/assets/wizrobelogo3.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <!-- RIGHT -->
+        <div style="position:relative;right:10%;">
+            <ul class="nav navbar-nav navbar-right" >
+                
+                {% if user.is_authenticated %}
+                
+                    <div class="dropdown">
+                        <a href="{% url "viewprofile" %}"><button class="dropbtn"><img src="{{ user.userprofile.image_url }}" class="profilepicture"></button></a>
+                        <div class="dropdown-content">
+                            <a href="{% url "viewprofile" %}">Your profile</a>
+                            <hr class="nomargins">
+                            <a href="{% url "settingsprofile" %}">Settings</a>
+                            <a href="{% url "signout" %}">Sign out</a>
+                        </div>
+                    </div>
+                    
+                {% else %}
+                
+                    <li><a href='{% url "signin" %}'>Sign In<span class="sr-only">(current)</span></a></li>
+                    <li><p class="textup">or</p></li>
+                    <li><a href='{% url "signup" %}' style="padding-right: 0px;">Sign Up<span class="sr-only">(current)</span></a></li>
+                    
+                {% endif %}
+                
+            </ul>
+        </div>
+    </div>
+</div>

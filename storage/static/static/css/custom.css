@@ -1,6 +1,8 @@
 /*========================================
 Custom css throughout app
 ==========================================*/
+
+
 p {
     font-weight: 600 !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
@@ -169,8 +171,6 @@ Sign Up Page
     
 }
 
-
-
 .success {
     text-align: right;
 }
@@ -180,13 +180,6 @@ Sign Up Page
     z-index: 0;
     position: relative;
     top: -70px;
-}
-
-.image2 {
-	height: auto;
-    width: auto;
-    position: relative;
-    left: 30px;
 }
 
 .getthere h1 {

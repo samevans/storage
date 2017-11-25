@@ -3,37 +3,52 @@ Navbar
 ==========================================*/
 
 #navbar {
-    
+    background-color: transparent !important;
+    border-color: transparent !important;
+    height: 50px !important;
+    width: 100%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin: 0px 0px 0px 0px !important;
+    font-weight: 600 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #24292E !important;   
+}
+
+#navbar .wizrobelogo {
+    height: auto;
+    width: auto;
+    pointer-events: none !important;
 }
 
 #navbar .profilepicture {
     border-radius: 3px !important;
 	width: 28px !important;
 	height: 28px !important;
+    pointer-events: none !important;
+}
+
+#navbar li a {
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+/* The 'or' text */
+#navbar .textup {
+    margin-top: 15px !important;
 }
 
 .nomargins{
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.navbar_font {
-    font-family: helvetica;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.navbar_font_textup {
-    margin-top: 14px !important;
+    margin: 0px 0px 0px 0px;
 }
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #FFFFFF;
+    background-color: transparent;
     color: #777;
-    padding: 16px;
+    padding: 10px;
     border: none;
     cursor: pointer;
 }
@@ -42,6 +57,16 @@ Navbar
 .dropdown {
     position: relative;
     display: inline-block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: transparent;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -66,20 +91,4 @@ Navbar
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #FFFFFF;
-}
-
-
-
-.navbar-colours {
-    color: #FFFFFF !important;
-    background-color: #FFFFFF !important;
-    border-color: transparent !important;
-}
