@@ -6,6 +6,7 @@ from django.contrib.auth.views import (
     login, logout, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 )
 
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -17,9 +18,9 @@ urlpatterns = patterns('',
     url(r'^login/$', login, {'template_name': 'signin.html'}, name='signin'),
     url(r'^logout/$', 'wizrobe.views.signout', name='signout'),
     url(r'^requestpassword/$', password_reset, {'template_name': 'requestpassword.html'}, name='requestpassword'),
-    url(r'^requestpassword/done/$', password_reset_done, {'template_name': 'requestpassworddone.html'}, name='password_reset_done'),
+    url(r'^requestpassword/done/$', password_reset_done, {'template_name': 'requestpassworddone.html', 'extra_context':{'email': '2'}}, name='password_reset_done'),
     url(r'^requestpassword/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm, name='password_reset_confirm'),
-    url(r'^requestpassword/complete/$', password_reset_complete, name='password_reset_complete'),
+    url(r'^requestpassword/complete/$', password_reset_complete, {'template_name': 'requestpasswordcomplete.html'}, name='password_reset_complete'),
     url(r'^accounts/profile/$', 'wizrobe.views.successfully_loggedin', name='accounts_profile'),
 
     # Profile

@@ -16,6 +16,7 @@ Sign In & Reset Password
 .accountbox {
 	background-color: #F8F8FA;
 	width: 340px;
+	style="height:auto;"
 	border:2px solid #F1F1F1;
 	border-radius: 4px !important;
 	padding: 25px;

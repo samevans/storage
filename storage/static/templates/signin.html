@@ -16,7 +16,7 @@
 		<p class="accountmessage">Your username and password didn't match. Please try again.</p>
 	{% endif %}
 	
-	<div class="accountbox" style="height: 255px;">
+	<div class="accountbox">
 		<form method='POST' action=''>
             {% csrf_token %}
 			
@@ -31,6 +31,8 @@
 					<span style="float:right;"><a href="{% url "requestpassword" %}">Forgot Password?</a></span></p>
 				{% endif %}
 				
+				<!--<p class="accountmessage">{{field.errors.as_text}}</p>-->
+				
                 <div class="accountinput" >
                     <input class="form-control input-md" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
                 </div>
@@ -41,7 +43,7 @@
         </form>
 	</div>
 	
-	<div class="accountbox" style="text-align: center;height:75px;">
+	<div class="accountbox" style="text-align: center;">
 		<p>New to Wizrobe? <a href="{% url "signup" %}">Create an account</a>.</p>
 	</div>
 

@@ -21,7 +21,9 @@ Working with messages:
 https://docs.djangoproject.com/en/1.11/ref/contrib/messages/
 
 User authentication:
-https://docs.djangoproject.com/en/1.11/topics/auth/default/#user-objects
+https://docs.djangoproject.com/en/1.11/topics/auth/default/
+https://docs.djangoproject.com/en/1.8/_modules/django/contrib/auth/views/
+
 
 For when I'm ready to post up:
 name.com
@@ -30,3 +32,7 @@ https://www.youtube.com/watch?v=g-8EkVxh34g
 
 Deploying static files to production
 https://docs.djangoproject.com/en/1.10/howto/static-files/deployment
+
+Current version of django
+>>> django.VERSION
+(1, 5, 4, 'final', 0)
