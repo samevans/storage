@@ -104,9 +104,21 @@ Navbar
 
 /* Change color of dropdown links on hover */
 #navbar .dropdown-content a:hover {
-    background-color: #0366d6;
-    color: #FFFFFF;
-    text-decoration: none;
+    background-color: #0366d6 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
 }
 
-
+#navbar .dropdown-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border: 4px solid;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    color: rgba(255,255,255,0.75);
+    cursor: pointer;
+}
