@@ -1,43 +1,41 @@
 {% extends 'settings.html' %}
 
 {% block settingscontent %}
-        
-    <h1>Change password</h1>
-    <hr style="margin-bottom: 5px;margin-top: 0px;">
-    <div id="changepassword">
-        
-        {% if messages %}
-		{% for message in messages %}
-			<h1 class="signupreceived">{{ message }}</h1>
-		{% endfor %}
-        {% endif %}
-        
-        <form method='POST'>
-            {% csrf_token %}
-            
-            {% for field in form %}
-                {%if 'confirmation' in field.label %}
-                    <p>Confirm password</p>
-                {% else %}
-                    <p>{{field.label}}</p>
-                {% endif %}
-                {{field.errors.as_text}}
-                <div>
-                    <input class="form-control input-md textboxes" name="{{ field.html_name }}" type="password"">
-                </div>
-            {% endfor %}
-            
-            <div class="forgot">
-                <input name="updatepassword" type="submit" class="submitbutton" value="Update password" style="float:left;">
-                <p><a href="{% url "requestpassword" %}">I forgot my password</a></p>
-            </div>
-        </form>
+    <div class="Subhead">
+        <h2 class="Subhead-heading">Change password</h2>
     </div>
-    <br/>
-    <h1>Change username</h1>
-    <hr style="margin-bottom: 5px;margin-top: 0px;">
+        
+    <form method='POST'>
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <p style="margin: 8px 0 8px;">
+                {%if 'confirmation' in field.label %}
+                    Confirm password
+                {% else %}
+                    {{field.label}}
+                {% endif %}
+            </p>
+            
+            <p>{{field.errors.as_text}}</p>
+            <div>
+                <input class="inputfield" name="{{ field.html_name }}" type="password"">
+            </div>
+        {% endfor %}
+        
+        <p>
+            <input name="updatepassword" type="submit" class="btn" value="Update password" style="float:left;">
+            <p><a href="{% url "requestpassword" %}">I forgot my password</a></p>
+        </p>
+    </form>
     
-    <h1 style="color:#FF0000;">Delete account</h1>
-    <hr style="margin-bottom: 5px;margin-top: 0px;">
-    <p style="font-weight: normal">Once you delete your account there is no going back. Please be certain.</p>
+    <div class="Subhead">
+        <h2 class="Subhead-heading">Change username</h2>
+    </div>
+    
+    <div class="Subhead">
+        <h2 class="Subhead-heading" style="color:#FF0000;">Delete account</h2>
+    </div>
+    <p>Once you delete your account there is no going back. Please be certain.</p>
+
 {% endblock %}

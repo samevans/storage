@@ -5,6 +5,15 @@ Custom css throughout app
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    line-height: 1.5 !important;
+    color: #24292E !important;
+}
+
+.pagecontent {
+    padding-top: 20px !important;
+    width: 980px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
 }
 
 p {
@@ -13,6 +22,62 @@ p {
     line-height: 1.5 !important;
     color: #24292E !important;
     padding: 0px 0px 0px 0px !important;
+}
+
+a {
+    color: #0366D6;
+    text-decoration: none;
+}
+
+.inputfield {
+    width: 440px;
+    max-width: 100%;
+    margin-right: 5px;
+    background-color: #FAFBFC;
+    min-height: 34px;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #24292e;
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+}
+
+.btn {
+    color: #24292E;
+    background-color: #EFF3F6;
+    background-image: linear-gradient(-180deg, #FAFBFC 0%, #EFF3F6 90%);
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,0.2);
+    border-radius: 0.25em;
+    -webkit-appearance: none;
+}
+
+.btn:hover {
+    background-color:#e6ebf1;
+    background-image:linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
+    background-position:0 -0.5em;
+    border-color:rgba(27,31,35,0.35);
 }
 
 /*========================================

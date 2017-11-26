@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
 from PIL import Image
+from base.constants import *
 
 # class UserProfileManager(models.Manager):
 #      def get_queryset(self):
@@ -32,6 +33,7 @@ post_save.connect(create_profile, sender=User)
 
 # DataConfig
 class PersonalSettings(models.Model):
-    profile = models.CharField(max_length=120, default='')
-    account = models.CharField(max_length=120, default='')
-    billing = models.CharField(max_length=120, default='')
+    profile = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    account = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_ACCOUNT_URL)
+    billing = models.CharField(max_length=120, default='', help_text='')
+    emails = models.CharField(max_length=120, default='', help_text='')

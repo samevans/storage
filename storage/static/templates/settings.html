@@ -2,29 +2,22 @@
 
 {% block content %}
 
-<div class="container row">
-	<div id="settingsoptions" class="col-md-3">
-		<h1>Personal settings</h1>
-		
+<div class=row>
+	<div class="col-md-3 float-left" role="navigation">
+	<div class="menu" style="max-width: 240px;">
+		<h3 class="menu-heading">Personal settings</h3>
 		{% for field in settings %}
-		    <div class="settingsfields">
-			   
-			   <a{% if field.label == "Profile" %}
-					 href="{% url "settingsprofile" %}"
-				  {% endif %}
-				  {% if field.label == "Account" %}
-					 href="{% url "settingsaccount" %}"
-				  {% endif %}
-			   >{{ field.label }}</a>
-		    </div>
+		   <a class="menu-item" href="{{field.help_text}}">{{ field.label }}</a>
 		{% endfor %}
-	 </div>
-	
-	<div id="profile" class="col-md-9 row">
-		{% block settingscontent %}
-		{% endblock %}
 	</div>
-	
 </div>
+
+
+<div class="col-md-9 float-left">
+	{% block settingscontent %}
+	{% endblock %}
+</div>
+</div>
+
 
 {% endblock %}

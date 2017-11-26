@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.contrib.auth.views import (
     login, logout, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 )
+from base.constants import *
 
 
 admin.autodiscover()
@@ -25,8 +26,8 @@ urlpatterns = patterns('',
 
     # Profile
     url(r'^profile/$', 'wizrobe.views.view_profile', name='viewprofile'),
-    url(r'^settings/profile/', 'wizrobe.views.settings_profile', name='settingsprofile'),
-    url(r'^settings/account/', 'wizrobe.views.settings_account', name='settingsaccount'),
+    url(r'^'+SETTINGS_PROFILE_URL, 'wizrobe.views.settings_profile', name='settingsprofile'),
+    url(r'^'+SETTINGS_ACCOUNT_URL, 'wizrobe.views.settings_account', name='settingsaccount'),
     
     # New Storage Space
     url(r'^new/$', 'wizrobe.views.newspace', name='newspace'),
