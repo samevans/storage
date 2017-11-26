@@ -2,8 +2,7 @@
 
 {% block content %}
 
-<div class=row>
-	<div class="col-md-3 float-left" role="navigation">
+<div class="col-md-3 float-left" role="navigation">
 	<div class="menu" style="max-width: 240px;">
 		<h3 class="menu-heading">Personal settings</h3>
 		{% for field in settings %}
@@ -12,11 +11,9 @@
 	</div>
 </div>
 
-
 <div class="col-md-9 float-left">
 	{% block settingscontent %}
 	{% endblock %}
-</div>
 </div>
 
 

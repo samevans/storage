@@ -76,23 +76,27 @@ def view_profile(request):
 def settings_profile(request):
     if request.method == 'POST':
         
+        # get primarykey for user
+        _user = UserProfile.objects.filter(user=request.user)
+        _userid = _user.values_list('user_id', flat=True).distinct()
+        u = UserProfile.objects.get(pk=_userid[0])
+        
         if 'POSTprofilepic' in request.POST:
             form = UserChangeForm(request.POST, request.FILES)
-        
             if form.is_valid():
-                # get primarykey for user
-                _user = UserProfile.objects.filter(user=request.user)
-                _userid = _user.values_list('user_id', flat=True).distinct()
+                u.image = form.cleaned_data['image']
+                u.save()
                 
-                m = UserProfile.objects.get(pk=_userid[0])
-                m.image = form.cleaned_data['image']
-                m.save()
+        elif 'POSTbasicinfo' in request.POST:
+            form = UserChangeForm(request.POST)
+            if form.is_valid():
+                u.zipcode = form.cleaned_data['zipcode']
+                u.save()
                 
-                return HttpResponseRedirect('/settings/profile')
-                # return HttpResponseRedirect('/profile')
-        
-    else:
-        form = UserChangeForm(instance=request.user.userprofile)
+        return HttpResponseRedirect('/settings/profile')
+        # return HttpResponseRedirect('/profile')       
+            
+    form = UserChangeForm(instance=request.user.userprofile)
     
     args = { 'form':form, 'request':request, 'settings':PersonalSettingsForm() }
     return render(request, 'settings_profile.html', args)
@@ -103,8 +107,6 @@ def settings_account(request):
 
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
-        
-        print form
         
         if form.is_valid():
             form.save()

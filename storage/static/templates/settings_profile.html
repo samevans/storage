@@ -1,21 +1,23 @@
 {% extends 'settings.html' %}
 
 {% block settingscontent %}
-        
-    <h1>Public profile</h1>
-    <hr style="margin-bottom: 5px;margin-top: 0px;">
+    
+    <div class="Subhead">
+        <h2 class="Subhead-heading">Public profile</h2>
+    </div>
+    
     <div class="col-md-7" style="float: left;">
         <form method='POST' action=''>
             {% csrf_token %}
             {% for field in form %}
                 {% if 'image' not in field.html_name and 'password' not in field.html_name %}
                     <div class="signin_inputbox" >
-                        <input class="form-control input-md textboxes" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
+                        <input class="form-control input-md inputfield" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
                     </div>
                 {% endif %}
             {% endfor %}
             
-            <button class="uploadbutton" type="submit">Submit</button>
+            <button name="POSTbasicinfo" class="btn" type="submit">Submit</button>
         </form>
     </div>
     
@@ -31,13 +33,13 @@
             {% for field in form %}
                 {% if 'image' in field.html_name %}
                     <div class="profilepictureupload">
-                        <input class="submitbutton" id="{{ field.id_for_label }}" name="{{ field.html_name }}" type="file">
+                        <input class="btn" id="{{ field.id_for_label }}" name="{{ field.html_name }}" type="file">
                     </div>
                 {% endif %}
             {% endfor %}
             
             <div class="profilepictureupload">
-                <input name="POSTprofilepic" type="submit" class="submitbutton" value="Submit">
+                <input name="POSTprofilepic" type="submit" class="btn" value="Submit">
             </div>
 
         </form>
