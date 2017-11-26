@@ -80,6 +80,24 @@ a {
     border-color:rgba(27,31,35,0.35);
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+}
+
+.btn-primary:hover {
+    background-color:#269F42;
+    background-image:linear-gradient(-180deg, #2FCB53 0%, #269F42 90%);
+    border-color:rgba(27,31,35,0.5)
+}
+
+
+
+
+
+
+
 /*========================================
 Sign Up Page
 ==========================================*/
