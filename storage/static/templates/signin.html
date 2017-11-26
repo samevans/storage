@@ -16,7 +16,7 @@
 		<p class="accountmessage">Your username and password didn't match. Please try again.</p>
 	{% endif %}
 	
-	<div class="accountbox">
+	<div class="accountbox" style="background-color: #FFFFFF;">
 		<form method='POST' action=''>
             {% csrf_token %}
 			
@@ -34,7 +34,8 @@
 				<!--<p class="accountmessage">{{field.errors.as_text}}</p>-->
 				
                 <div class="accountinput" >
-                    <input class="form-control input-md" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
+                    <input class="form-control input-md" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %}
+						   placeholder="{{ field.label }}">
                 </div>
 				
             {% endfor %}

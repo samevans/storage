@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
-from .forms import RegistrationForm, PersonalSettingsForm, EditProfileForm, UserChangeForm
+from .forms import RegistrationForm, PersonalSettingsForm, UserChangeForm
 from .models import UserProfile
 
 def home(request):
@@ -119,5 +119,11 @@ def settings_account(request):
 
 @login_required(login_url='/login')
 def successfully_loggedin(request):
-    return HttpResponseRedirect('/profile')
-    # return HttpResponseRedirect('/dashboard')
+    # return HttpResponseRedirect('/profile')
+    return HttpResponseRedirect('/dashboard')
+    
+@login_required(login_url='/login')
+def newspace(request):
+    args = { 'request':request }
+    return render(request, 'newspace.html', args)
+    

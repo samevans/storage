@@ -19,6 +19,7 @@
         <form method='POST' action=''>
             {% csrf_token %}
             {% for field in form %}
+                <p class="accountmessage">{{field.errors.as_text}}</p>
                 <div class="signup_box" >
                     <input class="form-control input-lg" name="{{ field.html_name }}" {% if 'Password' in field.label %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
                 </div>

@@ -2,9 +2,13 @@
 Custom css throughout app
 ==========================================*/
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
 p {
     font-weight: 600 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
     font-size: 14px !important;
     line-height: 1.5 !important;
     color: #24292E !important;
@@ -89,7 +93,6 @@ Sign Up Page
     position: relative;
     left: 40px;
     top: 20px;
-    font-family: helvetica;
     font-size: 25px;
     letter-spacing: -.04em;
 }
@@ -99,7 +102,6 @@ Sign Up Page
     position: relative;
     left: 40px;
     top: 0px;
-    font-family: helvetica;
     font-size: 19px;
     letter-spacing: .07em;
 }
@@ -109,7 +111,6 @@ Sign Up Page
     position: relative;
     left: 90px;
     top: 0px;
-    font-family: helvetica;
     font-size: 19px;
     letter-spacing: .07em;
 }
@@ -119,7 +120,6 @@ Sign Up Page
     position: relative;
     left: 60px;
     top: 10px;
-    font-family: helvetica;
     font-size: 10px;
 }
 
@@ -181,7 +181,6 @@ Sign Up Page
 }
 
 .getthere h1 {
-    font-family: ff-clan-web-pro, "Helvetica Neue", Helvetica, sans-serif !important;
     letter-spacing: -.03em !important;
     font-weight: 400 !important;
     position: relative;

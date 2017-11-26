@@ -5,6 +5,7 @@ Sign In & Reset Password
 .accountheader {
 	text-align: center;
 	letter-spacing: -.07em;
+	padding-top: 28px;
 }
 
 .accountmessage {
@@ -16,8 +17,8 @@ Sign In & Reset Password
 .accountbox {
 	background-color: #F8F8FA;
 	width: 340px;
-	style="height:auto;"
-	border:2px solid #F1F1F1;
+	height:auto;
+	border:1px solid #D8DEE2;
 	border-radius: 4px !important;
 	padding: 25px;
 	margin: 25px;

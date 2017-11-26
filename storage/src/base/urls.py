@@ -28,6 +28,9 @@ urlpatterns = patterns('',
     url(r'^settings/profile/', 'wizrobe.views.settings_profile', name='settingsprofile'),
     url(r'^settings/account/', 'wizrobe.views.settings_account', name='settingsaccount'),
     
+    # New Storage Space
+    url(r'^new/$', 'wizrobe.views.newspace', name='newspace'),
+    
     url(r'^dashboard/$', 'wizrobe.views.dashboard', name='dashboard'),
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -38,6 +38,8 @@
                 
                 {% if user.is_authenticated %}
                 
+                    <li><a href='{% url "newspace" %}'>List a storage space<span class="sr-only">(current)</span></a></li>
+                    
                     <div class="dropdown">
                         
                         <button class="dropbtn" onclick="showNavDropdown();">
@@ -46,7 +48,6 @@
                         </button>
                         
                         <div id="navDropdown" class="dropdown-content">
-                            
                             <p class="text">Signed in as <b>{{ user.username }}</b></p>
                             <hr>
                             <a href="{% url "viewprofile" %}">Your profile</a>
@@ -59,7 +60,7 @@
                 {% else %}
                 
                     <li><a href='{% url "signin" %}'>Sign In<span class="sr-only">(current)</span></a></li>
-                    <li><p class="stupidor" style="padding-right: 0px !important;padding-left: 0px !important;">or</p></li>
+                    <li><p class="stupidor">or</p></li>
                     <li><a href='{% url "signup" %}' style="padding-right: 0px;">Sign Up<span class="sr-only">(current)</span></a></li>
                     
                 {% endif %}
