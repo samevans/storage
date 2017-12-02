@@ -58,39 +58,6 @@
 
 
 /*========================================
-Change Password Options
-==========================================*/
-
-#changepassword {
-    display: inline-block;
-}
-
-#changepassword .textboxes {
-    width: 440px;
-    max-width: 100%;
-    position: relative !important;
-    margin-bottom: 5px !important;
-    font-weight: normal;
-}
-
-#changepassword .submitbutton {
-    width: 200px;
-    height: 32px;
-    border-radius: 3px;
-    border: 1px solid #CCCED0;
-    background-color: #eff3f6;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #24292e;
-    margin-right: 10px;
-}
-
-#changepassword .forgot {
-    margin-top: 10px;
-}
-
-/*========================================
 Profile Picture Options
 ==========================================*/
 #profilepicturefields {

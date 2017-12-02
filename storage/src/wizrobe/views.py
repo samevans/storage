@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
-from .forms import RegistrationForm, PersonalSettingsForm, UserChangeForm
+from .forms import RegistrationForm, PersonalSettingsForm, UserChangeForm, SpaceForm
 from .models import UserProfile
 
 def home(request):
@@ -126,6 +126,12 @@ def successfully_loggedin(request):
     
 @login_required(login_url='/login')
 def newspace(request):
-    args = { 'request':request }
+    
+    if request.method == 'POST':
+        form = SpaceForm(request.POST)
+    else:
+        form = SpaceForm()
+        
+    args = { 'request':request, 'form':form }
     return render(request, 'newspace.html', args)
     

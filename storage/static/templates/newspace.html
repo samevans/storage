@@ -3,4 +3,11 @@
     <div class="accountheader">
 		<h3>Wizrobe Rental Manager</h3>
 	</div>
+    
+    <form method='POST' action=''>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input name="newspace" type="submit" class="btn" value="Submit">
+    </form>
+            
 {% endblock%}

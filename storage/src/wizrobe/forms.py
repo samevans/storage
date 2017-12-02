@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, ReadOnlyPasswordHashField, AuthenticationForm
-from models import PersonalSettings, UserProfile
+from models import PersonalSettings, UserProfile, Space
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -16,6 +16,7 @@ class RegistrationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
     
 class UserChangeForm(forms.ModelForm):
     """A form for updating users. Includes all the fields on
@@ -27,6 +28,11 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('zipcode','image','password')
+
+
+class SpaceForm(forms.ModelForm):
+    class Meta:
+        model = Space
 
 
 # Config Data

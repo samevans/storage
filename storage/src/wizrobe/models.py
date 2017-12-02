@@ -9,12 +9,12 @@ from base.constants import *
 #          return super(UserProfileManager, self).get_queryset().filter(phone=123)
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User)
-    name = models.CharField(max_length=120, default='', blank=True)
+    user =    models.OneToOneField(User)
+    name =    models.CharField(max_length=120, default='', blank=True)
     zipcode = models.CharField(max_length=120, default='', blank=True)
-    city = models.CharField(max_length=120, default='', blank=True)
-    phone = models.IntegerField(default=0, blank=True)
-    image = models.ImageField(upload_to='profile_image', blank=True)
+    city =    models.CharField(max_length=120, default='', blank=True)
+    phone =   models.IntegerField(default=0, blank=True)
+    image =   models.ImageField(upload_to='profile_image', blank=True)
     
     def __str__(self):
         return self.user.username
@@ -31,9 +31,41 @@ def create_profile(sender, **kwargs):
     
 post_save.connect(create_profile, sender=User)
 
+class Space(models.Model):
+    ROOM = 'RM'
+    DRIVEWAY = 'DR'
+    CLOSET = 'CL'
+    SHELF = 'SH'
+    WIZROBE_CHOICES = (
+        (ROOM, 'Room'),
+        (CLOSET, 'Closet'),
+        (SHELF, 'Shelf'),
+        (DRIVEWAY, 'Driveway'),
+    )
+    
+    title =               models.CharField(max_length=120, default='', blank=False)
+    dimensions =          models.CharField(max_length=120, default='', blank=True)
+    location =            models.CharField(max_length=120, default='', blank=True)
+    type_of_storage =     models.CharField(max_length=2,choices=WIZROBE_CHOICES,default=ROOM,blank=False)
+    address =             models.CharField(max_length=120, default='', blank=True)
+    available_from =      models.DateField(blank=False)#auto_now=True, 
+    available_to =        models.DateField()
+    price =               models.CharField(max_length=120, default='', blank=False)
+    image =               models.ImageField(upload_to='spaces', blank=True)
+    
+    def __str__(self):
+        return self.title
+    
+    def image_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        else:
+            return '/static/assets/defaultprofile.jpg'
+
+
 # DataConfig
 class PersonalSettings(models.Model):
     profile = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
     account = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_ACCOUNT_URL)
     billing = models.CharField(max_length=120, default='', help_text='')
-    emails = models.CharField(max_length=120, default='', help_text='')
+    emails =  models.CharField(max_length=120, default='', help_text='')
