@@ -82,12 +82,12 @@ class Space(models.Model):
 # Configuration Data
 ################################################################################################
 class ListSpaceOptions(models.Model):
-    location =         models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
-    contact_info =     models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
-    basic_details =    models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
-    photos_and_video = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
-    description =      models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
-    review =           models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    location =         models.CharField(max_length=120, default='', help_text='/'+LISTINGS_LOCATION)
+    contact_info =     models.CharField(max_length=120, default='', help_text='/'+LISTINGS_LOCATION)
+    basic_details =    models.CharField(max_length=120, default='', help_text='/'+LISTINGS_LOCATION)
+    photos_and_video = models.CharField(max_length=120, default='', help_text='/'+LISTINGS_LOCATION)
+    description =      models.CharField(max_length=120, default='', help_text='/'+LISTINGS_LOCATION)
+    review =           models.CharField(max_length=120, default='', help_text='/'+LISTINGS_LOCATION)
 
 
 class PersonalSettings(models.Model):

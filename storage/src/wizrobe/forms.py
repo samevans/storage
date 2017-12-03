@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, ReadOnlyPasswordHashField, AuthenticationForm
-from models import PersonalSettings, UserProfile, Space
+from models import *
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -34,8 +34,15 @@ class SpaceForm(forms.ModelForm):
     class Meta:
         model = Space
 
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
 
 # Config Data
 class PersonalSettingsForm(forms.ModelForm):
     class Meta:
         model = PersonalSettings
+
+class ListSpaceOptionsForm(forms.ModelForm):
+    class Meta:
+        model = ListSpaceOptions      

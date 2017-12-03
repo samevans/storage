@@ -30,7 +30,8 @@ urlpatterns = patterns('',
     url(r'^'+SETTINGS_ACCOUNT_URL, 'wizrobe.views.settings_account', name='settingsaccount'),
     
     # New Storage Space
-    url(r'^new/$', 'wizrobe.views.newspace', name='newspace'),
+    url(r'^listing/$', 'wizrobe.views.listing', name='listing'),
+    url(r'^'+LISTINGS_LOCATION, 'wizrobe.views.listing_location', name='listinglocation'),
     
     url(r'^dashboard/$', 'wizrobe.views.dashboard', name='dashboard'),
     url(r'^admin/', include(admin.site.urls)),

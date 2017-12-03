@@ -6,8 +6,9 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
-from .forms import RegistrationForm, PersonalSettingsForm, UserChangeForm, SpaceForm
-from .models import UserProfile
+from .forms import *
+from .models import *
+from base.constants import *
 
 def home(request):
     args = {'request':request}
@@ -124,14 +125,18 @@ def successfully_loggedin(request):
     # return HttpResponseRedirect('/profile')
     return HttpResponseRedirect('/dashboard')
     
+    
 @login_required(login_url='/login')
-def newspace(request):
+def listing(request):
+    return HttpResponseRedirect('/'+LISTINGS_LOCATION)
     
+
+@login_required(login_url='/login')
+def listing_location(request):
     if request.method == 'POST':
-        form = SpaceForm(request.POST)
+        form = AddressForm(request.POST)
     else:
-        form = SpaceForm()
+        form = AddressForm()
         
-    args = { 'request':request, 'form':form }
-    return render(request, 'newspace.html', args)
-    
+    args = { 'request':request, 'form':form, 'listingoptions': ListSpaceOptionsForm()}
+    return render(request, 'listing_address.html', args)
