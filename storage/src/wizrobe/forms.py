@@ -27,7 +27,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ('zipcode','image','password')
+        fields = ('image','password')
 
 
 class SpaceForm(forms.ModelForm):

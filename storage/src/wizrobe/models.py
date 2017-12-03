@@ -4,16 +4,25 @@ from django.db.models.signals import post_save
 from PIL import Image
 from base.constants import *
 
-# class UserProfileManager(models.Manager):
-#      def get_queryset(self):
-#          return super(UserProfileManager, self).get_queryset().filter(phone=123)
 
+
+class Address(models.Model):
+    creator = models.OneToOneField(User)
+    street = models.CharField(max_length=120, default='', blank=False)
+    unit_floor_building = models.CharField(max_length=120, default='', blank=True)
+    city = models.CharField(max_length=120, default='', blank=False)
+    state = models.CharField(max_length=120, default='', blank=False)
+    zip_code = models.CharField(max_length=12, default='', blank=False)
+
+    def __str__(self):
+        return self.street
+
+
+    
 class UserProfile(models.Model):
     user =    models.OneToOneField(User)
     name =    models.CharField(max_length=120, default='', blank=True)
-    zipcode = models.CharField(max_length=120, default='', blank=True)
-    city =    models.CharField(max_length=120, default='', blank=True)
-    phone =   models.IntegerField(default=0, blank=True)
+    address = models.ForeignKey(Address, blank=True)
     image =   models.ImageField(upload_to='profile_image', blank=True)
     
     def __str__(self):
@@ -27,10 +36,14 @@ class UserProfile(models.Model):
     
 def create_profile(sender, **kwargs):
     if kwargs['created']:
-        user_profile = UserProfile.objects.create(user=kwargs['instance'])
-    
+        addr = Address(creator=kwargs['instance'])
+        addr.save()
+        user_profile = UserProfile.objects.create(user=kwargs['instance'], address=addr)
+            
 post_save.connect(create_profile, sender=User)
 
+    
+    
 class Space(models.Model):
     ROOM = 'RM'
     DRIVEWAY = 'DR'
@@ -42,12 +55,13 @@ class Space(models.Model):
         (SHELF, 'Shelf'),
         (DRIVEWAY, 'Driveway'),
     )
-    
+    lister =              models.OneToOneField(User)
+    address =             models.OneToOneField(Address)
+    hide_address =        models.BooleanField(default=False)
     title =               models.CharField(max_length=120, default='', blank=False)
     dimensions =          models.CharField(max_length=120, default='', blank=True)
     location =            models.CharField(max_length=120, default='', blank=True)
     type_of_storage =     models.CharField(max_length=2,choices=WIZROBE_CHOICES,default=ROOM,blank=False)
-    address =             models.CharField(max_length=120, default='', blank=True)
     available_from =      models.DateField(blank=False)#auto_now=True, 
     available_to =        models.DateField()
     price =               models.CharField(max_length=120, default='', blank=False)
@@ -63,7 +77,19 @@ class Space(models.Model):
             return '/static/assets/defaultprofile.jpg'
 
 
-# DataConfig
+
+
+# Configuration Data
+################################################################################################
+class ListSpaceOptions(models.Model):
+    location =         models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    contact_info =     models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    basic_details =    models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    photos_and_video = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    description =      models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+    review =           models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
+
+
 class PersonalSettings(models.Model):
     profile = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_PROFILE_URL)
     account = models.CharField(max_length=120, default='', help_text='/'+SETTINGS_ACCOUNT_URL)
