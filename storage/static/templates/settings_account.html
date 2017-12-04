@@ -13,7 +13,7 @@
                 {%if 'confirmation' in field.label %}
                     Confirm password
                 {% else %}
-                    {{field.label}}
+                    {{field.label}} {{ if field.required }}*{{ endif }}
                 {% endif %}
             </p>
             

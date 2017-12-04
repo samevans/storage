@@ -5,24 +5,22 @@ from PIL import Image
 from base.constants import *
 
 
-
 class Address(models.Model):
-    creator = models.OneToOneField(User)
-    street = models.CharField(max_length=120, default='', blank=False)
-    unit_floor_building = models.CharField(max_length=120, default='', blank=True)
+    id = models.AutoField(primary_key=True)
+    street_address = models.CharField(max_length=120, default='', blank=False)
     city = models.CharField(max_length=120, default='', blank=False)
-    state = models.CharField(max_length=120, default='', blank=False)
+    state = models.CharField(max_length=120, choices=US_STATES, default='', blank=False)
     zip_code = models.CharField(max_length=12, default='', blank=False)
-
+    hide_address = models.BooleanField(default=False)
+    
     def __str__(self):
-        return self.street
-
-
+        return self.street_address + ', ' + self.city + ', ' + self.state + ' ' + self.zip_code
+    
+  
     
 class UserProfile(models.Model):
     user =    models.OneToOneField(User)
     name =    models.CharField(max_length=120, default='', blank=True)
-    address = models.ForeignKey(Address, blank=True)
     image =   models.ImageField(upload_to='profile_image', blank=True)
     
     def __str__(self):
@@ -36,12 +34,11 @@ class UserProfile(models.Model):
     
 def create_profile(sender, **kwargs):
     if kwargs['created']:
-        addr = Address(creator=kwargs['instance'])
-        addr.save()
-        user_profile = UserProfile.objects.create(user=kwargs['instance'], address=addr)
+        user_profile = UserProfile.objects.create(user=kwargs['instance'])
             
 post_save.connect(create_profile, sender=User)
 
+    
     
     
 class Space(models.Model):
@@ -57,7 +54,7 @@ class Space(models.Model):
     )
     lister =              models.OneToOneField(User)
     address =             models.OneToOneField(Address)
-    hide_address =        models.BooleanField(default=False)
+    
     title =               models.CharField(max_length=120, default='', blank=False)
     dimensions =          models.CharField(max_length=120, default='', blank=True)
     location =            models.CharField(max_length=120, default='', blank=True)

@@ -91,7 +91,7 @@ def settings_profile(request):
         elif 'POSTbasicinfo' in request.POST:
             form = UserChangeForm(request.POST)
             if form.is_valid():
-                u.zipcode = form.cleaned_data['zipcode']
+                # u.zipcode = form.cleaned_data['zipcode']
                 u.save()
                 
         return HttpResponseRedirect('/settings/profile')
@@ -135,8 +135,17 @@ def listing(request):
 def listing_location(request):
     if request.method == 'POST':
         form = AddressForm(request.POST)
-    else:
-        form = AddressForm()
         
-    args = { 'request':request, 'form':form, 'listingoptions': ListSpaceOptionsForm()}
+        if form.is_valid():
+            form.save()
+            
+    else:
+        form = AddressForm(initial={'state':''})
+        
+    args = {
+        'request':request,
+        'form':form,
+        'listingoptions': ListSpaceOptionsForm(),
+        'states': US_STATES_DICT
+    }
     return render(request, 'listing_address.html', args)

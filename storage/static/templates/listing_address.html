@@ -4,10 +4,33 @@
     <div class="Subhead">
         <h2 class="Subhead-heading">Tell us about your property</h2>
     </div>
-    <form method='POST' action=''>
-        {% csrf_token %}
-        {{form.as_p}}
-        <input name="newspace" type="submit" class="btn" value="Submit">
+    <form method='POST' action=''>{% csrf_token %}
+        
+        {% for field in form %}
+        
+            <p style="margin: 8px 0 8px;">
+                {{field.label}}
+            </p>
+            <p>{{field.errors.as_text}}</p>
+            <div>
+                {% if 'State' in field.label %}
+                    <select name="{{ field.html_name }}" class="select">
+                        {% for key, value in states.items %}
+                            <option value="{{key}}">{{value}}</option>
+                        {%endfor%}
+                    </select>
+                {% else %}
+                    <input class="inputfield" name="{{ field.html_name }}"
+                           {% if 'Hide' in field.label%}type="checkbox"{%endif%} value="{{field.value}}">
+                {% endif %}
+                
+            </div>
+            
+        {% endfor %}
+        
+        <br/>
+        
+        <input name="newspace" type="submit" class="btn-primary" style="height: 34px;" value="Save and continue">
     </form>
     
 {% endblock %}

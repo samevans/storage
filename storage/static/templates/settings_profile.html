@@ -12,7 +12,15 @@
             {% for field in form %}
                 {% if 'image' not in field.html_name and 'password' not in field.html_name %}
                     <div class="signin_inputbox" >
-                        <input class="form-control input-md inputfield" name="{{ field.html_name }}" {% if field.label == "Password" %}type="password"{% else %}type="text"{% endif %} placeholder="{{ field.label }}">
+                        <input
+                               class="form-control input-md inputfield"
+                               name="{{ field.html_name }}"
+                               {% if field.label == "Password" %}
+                                    type="password"
+                                {% else %}
+                                    type="text"
+                                {% endif %}
+                               placeholder="{{ field.label }}">
                     </div>
                 {% endif %}
             {% endfor %}
